@@ -75,8 +75,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private List<string> _explicitNullValuePath = default!;
 #endif
         /// <summary>The reason property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedCreate403ResponseErrorsItemReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedCreate403ResponseErrorsItemReason? _explicitNullValueReason = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ThreatSignalsFeedLimitReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.ThreatSignalsFeedLimitReason? _explicitNullValueReason = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedCreate403ResponseErrorsItem"/> and sets the default values.
         /// </summary>
@@ -108,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "expected", n => { Expected = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedCreate403ResponseErrorsItemReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReason = default; _explicitNullProperties?.Remove("reason"); AdditionalData["reason"] = unknown; } else { Reason = parsed; AdditionalData.Remove("reason"); } } },
+                { "reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ThreatSignalsFeedLimitReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReason = default; _explicitNullProperties?.Remove("reason"); AdditionalData["reason"] = unknown; } else { Reason = parsed; AdditionalData.Remove("reason"); } } },
             };
         }
         /// <summary>
@@ -124,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("expected", Expected);
             writer.WriteStringValue("message", Message);
             writer.WriteCollectionOfPrimitiveValues<string>("path", Path);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssFeedCreate403ResponseErrorsItemReason>("reason", Reason);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ThreatSignalsFeedLimitReason>("reason", Reason);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

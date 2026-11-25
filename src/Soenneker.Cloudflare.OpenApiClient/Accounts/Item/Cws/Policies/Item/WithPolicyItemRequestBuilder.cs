@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cws.Policies.Item
         {
         }
         /// <summary>
-        /// Deletes the policy and cascades its policy-set membership rows. The policy sets remain.
+        /// Deletes the policy when no policy set references it. If referenced, the request is rejected with the policy set IDs and names; detach the policy first.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CwsResponseDeletedResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cws.Policies.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.CwsResponsePolicy>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.CwsResponsePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes the policy and cascades its policy-set membership rows. The policy sets remain.
+        /// Deletes the policy when no policy set references it. If referenced, the request is rejected with the policy set IDs and names; detach the policy first.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

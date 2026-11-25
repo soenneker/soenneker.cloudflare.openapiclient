@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.Introsp
         {
         }
         /// <summary>
-        /// Returns the dataset catalogue for the account in the request path. API Gateway preserves the account path, and SQL API requires it to match the signed JWT account; account_tag is not required as a query parameter. If supplied, it must match the path account. Dataset and column discovery options are identical to the legacy introspection endpoint.
+        /// Returns the dataset catalogue for the account in the path. The account_tag query parameter is optional and must match the path account if supplied. Dataset and column discovery options are identical to the legacy introspection endpoint.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.Introsp
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlIntrospectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the dataset catalogue for the account in the request path. API Gateway preserves the account path, and SQL API requires it to match the signed JWT account; account_tag is not required as a query parameter. If supplied, it must match the path account. Dataset and column discovery options are identical to the legacy introspection endpoint.
+        /// Returns the dataset catalogue for the account in the path. The account_tag query parameter is optional and must match the path account if supplied. Dataset and column discovery options are identical to the legacy introspection endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.Introsp
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.Introspection.IntrospectionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the dataset catalogue for the account in the request path. API Gateway preserves the account path, and SQL API requires it to match the signed JWT account; account_tag is not required as a query parameter. If supplied, it must match the path account. Dataset and column discovery options are identical to the legacy introspection endpoint.
+        /// Returns the dataset catalogue for the account in the path. The account_tag query parameter is optional and must match the path account if supplied. Dataset and column discovery options are identical to the legacy introspection endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IntrospectionRequestBuilderGetQueryParameters 

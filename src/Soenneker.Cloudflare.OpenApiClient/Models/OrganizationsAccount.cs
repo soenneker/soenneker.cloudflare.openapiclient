@@ -19,10 +19,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("created_on") is null) { _explicitNullValueCreatedOn = default!; _explicitNullProperties?.Remove("created_on"); }
             else if (parseNode.GetChildNode("created_on") is { } nullNodeCreatedOn && nullNodeCreatedOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedOn = null;
+            if (parseNode.GetChildNode("enterprise_provisioning_status") is null) { _explicitNullValueEnterpriseProvisioningStatus = default!; _explicitNullProperties?.Remove("enterprise_provisioning_status"); }
+            else if (parseNode.GetChildNode("enterprise_provisioning_status") is { } nullNodeEnterpriseProvisioningStatus && nullNodeEnterpriseProvisioningStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnterpriseProvisioningStatus = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("provisioning_mode") is null) { _explicitNullValueProvisioningMode = default!; _explicitNullProperties?.Remove("provisioning_mode"); }
+            else if (parseNode.GetChildNode("provisioning_mode") is { } nullNodeProvisioningMode && nullNodeProvisioningMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvisioningMode = null;
             if (parseNode.GetChildNode("settings") is null) { _explicitNullValueSettings = default!; _explicitNullProperties?.Remove("settings"); }
             else if (parseNode.GetChildNode("settings") is { } nullNodeSettings && nullNodeSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Settings = null;
             if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
@@ -36,6 +40,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The created_on property</summary>
         public DateTimeOffset? CreatedOn { get => _explicitNullValueCreatedOn; set { _explicitNullValueCreatedOn = value; AdditionalData?.Remove("created_on"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_on"); else _explicitNullProperties?.Remove("created_on"); } }
         private DateTimeOffset? _explicitNullValueCreatedOn = default!;
+        /// <summary>The enterprise_provisioning_status property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccountEnterpriseProvisioningStatus? EnterpriseProvisioningStatus { get => _explicitNullValueEnterpriseProvisioningStatus; set { _explicitNullValueEnterpriseProvisioningStatus = value; AdditionalData?.Remove("enterprise_provisioning_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enterprise_provisioning_status"); else _explicitNullProperties?.Remove("enterprise_provisioning_status"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccountEnterpriseProvisioningStatus? _explicitNullValueEnterpriseProvisioningStatus = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
+        /// <summary>The provisioning_mode property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AssistedProvisioningMode? ProvisioningMode { get => _explicitNullValueProvisioningMode; set { _explicitNullValueProvisioningMode = value; AdditionalData?.Remove("provisioning_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioning_mode"); else _explicitNullProperties?.Remove("provisioning_mode"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AssistedProvisioningMode? _explicitNullValueProvisioningMode = default!;
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,11 +112,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(6)
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "enterprise_provisioning_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccountEnterpriseProvisioningStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEnterpriseProvisioningStatus = default; _explicitNullProperties?.Remove("enterprise_provisioning_status"); AdditionalData["enterprise_provisioning_status"] = unknown; } else { EnterpriseProvisioningStatus = parsed; AdditionalData.Remove("enterprise_provisioning_status"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "provisioning_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AssistedProvisioningMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvisioningMode = default; _explicitNullProperties?.Remove("provisioning_mode"); AdditionalData["provisioning_mode"] = unknown; } else { ProvisioningMode = parsed; AdditionalData.Remove("provisioning_mode"); } } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccountSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccountSettings.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccountTagsProperty>(global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccountTagsProperty.CreateFromDiscriminatorValue); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccountType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
@@ -120,8 +132,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccountEnterpriseProvisioningStatus>("enterprise_provisioning_status", EnterpriseProvisioningStatus);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AssistedProvisioningMode>("provisioning_mode", ProvisioningMode);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccountSettings>("settings", Settings);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccountTagsProperty>("tags", Tags);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.OrganizationsAccountType>("type", Type);

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Payment method type.</summary>
+    /// <summary>Payment method type. A card saved in a wallet has the wallet type and its card details. `link` is a card saved with Link, which has card details, or a Link payment that no card funds, which has none.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemType
     {

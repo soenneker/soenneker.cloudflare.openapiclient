@@ -19,18 +19,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("code") is null) { _explicitNullValueCode = default!; _explicitNullProperties?.Remove("code"); }
             else if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
-            if (parseNode.GetChildNode("custom_feed_count") is null) { _explicitNullValueCustomFeedCount = default!; _explicitNullProperties?.Remove("custom_feed_count"); }
-            else if (parseNode.GetChildNode("custom_feed_count") is { } nullNodeCustomFeedCount && nullNodeCustomFeedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFeedCount = null;
-            if (parseNode.GetChildNode("custom_feed_limit") is null) { _explicitNullValueCustomFeedLimit = default!; _explicitNullProperties?.Remove("custom_feed_limit"); }
-            else if (parseNode.GetChildNode("custom_feed_limit") is { } nullNodeCustomFeedLimit && nullNodeCustomFeedLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomFeedLimit = null;
             if (parseNode.GetChildNode("expected") is null) { _explicitNullValueExpected = default!; _explicitNullProperties?.Remove("expected"); }
             else if (parseNode.GetChildNode("expected") is { } nullNodeExpected && nullNodeExpected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expected = null;
             if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
             else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
             if (parseNode.GetChildNode("path") is null) { _explicitNullValuePath = default!; _explicitNullProperties?.Remove("path"); }
             else if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
-            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
-            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,12 +32,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The code property</summary>
         public double? Code { get => _explicitNullValueCode; set { _explicitNullValueCode = value; AdditionalData?.Remove("code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code"); else _explicitNullProperties?.Remove("code"); } }
         private double? _explicitNullValueCode = default!;
-        /// <summary>The current count of custom feeds for the account.</summary>
-        public int? CustomFeedCount { get => _explicitNullValueCustomFeedCount; set { _explicitNullValueCustomFeedCount = value; AdditionalData?.Remove("custom_feed_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_feed_count"); else _explicitNullProperties?.Remove("custom_feed_count"); } }
-        private int? _explicitNullValueCustomFeedCount = default!;
-        /// <summary>The custom feed limit for the account.</summary>
-        public int? CustomFeedLimit { get => _explicitNullValueCustomFeedLimit; set { _explicitNullValueCustomFeedLimit = value; AdditionalData?.Remove("custom_feed_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_feed_limit"); else _explicitNullProperties?.Remove("custom_feed_limit"); } }
-        private int? _explicitNullValueCustomFeedLimit = default!;
         /// <summary>The expected property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,9 +62,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
         private List<string> _explicitNullValuePath = default!;
 #endif
-        /// <summary>The reason property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleReprocess200ResponseErrorsItemReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleReprocess200ResponseErrorsItemReason? _explicitNullValueReason = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleReprocess200ResponseErrorsItem"/> and sets the default values.
         /// </summary>
@@ -100,15 +85,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(7)
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "code", n => { Code = n.GetDoubleValue(); } },
-                { "custom_feed_count", n => { CustomFeedCount = n.GetIntValue(); } },
-                { "custom_feed_limit", n => { CustomFeedLimit = n.GetIntValue(); } },
                 { "expected", n => { Expected = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleReprocess200ResponseErrorsItemReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReason = default; _explicitNullProperties?.Remove("reason"); AdditionalData["reason"] = unknown; } else { Reason = parsed; AdditionalData.Remove("reason"); } } },
             };
         }
         /// <summary>
@@ -119,12 +101,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("code", Code);
-            writer.WriteIntValue("custom_feed_count", CustomFeedCount);
-            writer.WriteIntValue("custom_feed_limit", CustomFeedLimit);
             writer.WriteStringValue("expected", Expected);
             writer.WriteStringValue("message", Message);
             writer.WriteCollectionOfPrimitiveValues<string>("path", Path);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleReprocess200ResponseErrorsItemReason>("reason", Reason);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -27,5 +27,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Proxied,
         #pragma warning restore CS1591
+        [EnumMember(Value = "created_on")]
+        #pragma warning disable CS1591
+        CreatedOn,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "modified_on")]
+        #pragma warning disable CS1591
+        ModifiedOn,
+        #pragma warning restore CS1591
     }
 }

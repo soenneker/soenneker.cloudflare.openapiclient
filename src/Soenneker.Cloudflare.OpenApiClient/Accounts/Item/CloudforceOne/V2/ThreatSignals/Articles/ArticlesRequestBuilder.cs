@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ArticlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles{?article_id*,cursor*,feed_category*,feed_id*,fetched_after*,fetched_before*,include_total*,min_relevance*,per_page*,pir_id*,published_after*,published_before*,read*,search*,severity*,sort*,source_type*,tag*,tag_applied_by*,tag_category*,tag_category_id*,tag_id*}", pathParameters)
+        public ArticlesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles{?article_id*,cursor*,feed_category*,feed_category_id*,feed_id*,fetched_after*,fetched_before*,include_total*,min_relevance*,per_page*,pir_id*,published_after*,published_before*,read*,search*,severity*,sort*,source_type*,tag*,tag_applied_by*,tag_category*,tag_category_id*,tag_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ArticlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles{?article_id*,cursor*,feed_category*,feed_id*,fetched_after*,fetched_before*,include_total*,min_relevance*,per_page*,pir_id*,published_after*,published_before*,read*,search*,severity*,sort*,source_type*,tag*,tag_applied_by*,tag_category*,tag_category_id*,tag_id*}", rawUrl)
+        public ArticlesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{accountId}/cloudforce-one/v2/threat-signals/articles{?article_id*,cursor*,feed_category*,feed_category_id*,feed_id*,fetched_after*,fetched_before*,include_total*,min_relevance*,per_page*,pir_id*,published_after*,published_before*,read*,search*,severity*,sort*,source_type*,tag*,tag_applied_by*,tag_category*,tag_category_id*,tag_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -188,10 +188,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Thre
             public string FeedCategory { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("feed_category_id")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleListFeedCategoryIdParameterItem[]? FeedCategoryId { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("feed_category_id")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.RssArticleListFeedCategoryIdParameterItem[] FeedCategoryId { get; set; }
+            #pragma warning restore CS1591
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             #pragma warning disable CS1591
             [QueryParameter("feed_id")]
-            public Guid? FeedId { get; set; }
+            public Guid?[]? FeedId { get; set; }
             #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("feed_id")]
+            public Guid?[] FeedId { get; set; }
+            #pragma warning restore CS1591
+#endif
             #pragma warning disable CS1591
             [QueryParameter("fetched_after")]
             public DateTimeOffset? FetchedAfter { get; set; }

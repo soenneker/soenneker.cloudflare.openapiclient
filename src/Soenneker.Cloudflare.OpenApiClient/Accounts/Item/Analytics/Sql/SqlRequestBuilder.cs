@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql
         {
         }
         /// <summary>
-        /// Executes a SQL query scoped to the account in the request path. API Gateway preserves the account path, and SQL API requires it to match the signed JWT account, so an accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any zone restrictions must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.
+        /// Executes a SQL query scoped to the account in the path. An accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any requested zones must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Executes a SQL query scoped to the account in the request path. API Gateway preserves the account path, and SQL API requires it to match the signed JWT account, so an accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any zone restrictions must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.
+        /// Executes a SQL query scoped to the account in the path. An accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any requested zones must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AnalyticsSqlQuerySuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Executes a SQL query scoped to the account in the request path. API Gateway preserves the account path, and SQL API requires it to match the signed JWT account, so an accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any zone restrictions must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.
+        /// Executes a SQL query scoped to the account in the path. An accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any requested zones must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -139,7 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql
             return requestInfo;
         }
         /// <summary>
-        /// Executes a SQL query scoped to the account in the request path. API Gateway preserves the account path, and SQL API requires it to match the signed JWT account, so an accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any zone restrictions must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.
+        /// Executes a SQL query scoped to the account in the path. An accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any requested zones must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -170,7 +170,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Analytics.Sql.SqlRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Executes a SQL query scoped to the account in the request path. API Gateway preserves the account path, and SQL API requires it to match the signed JWT account, so an accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any zone restrictions must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.
+        /// Executes a SQL query scoped to the account in the path. An accountTag predicate or JSON scope is not required. Explicit account scope must match the path account. Any requested zones must belong to that account. Query parameters, time ranges, output formats, authorization, and responses follow the legacy query endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SqlRequestBuilderGetQueryParameters 

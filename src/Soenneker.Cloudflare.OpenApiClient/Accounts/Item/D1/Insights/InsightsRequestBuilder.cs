@@ -4,6 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.Databases;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.Queries;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.Recommendations;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.Settings;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -25,6 +27,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.Queries.QueriesRequestBuilder Queries
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.Queries.QueriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The recommendations property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.Recommendations.RecommendationsRequestBuilder Recommendations
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.Recommendations.RecommendationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The settings property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.Settings.SettingsRequestBuilder Settings
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Insights.InsightsRequestBuilder"/> and sets the default values.

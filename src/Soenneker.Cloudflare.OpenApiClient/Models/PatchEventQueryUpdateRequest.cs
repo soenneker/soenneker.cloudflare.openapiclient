@@ -33,8 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Deprecated and ignored: saved-query alerting and rules were removed.</summary>
-        [Obsolete("")]
+        /// <summary>Send an hourly notification when new events match this saved view. Receive it by adding the view to a Threat Events saved query notification policy.</summary>
         public bool? AlertEnabled { get => _explicitNullValueAlertEnabled; set { _explicitNullValueAlertEnabled = value; AdditionalData?.Remove("alert_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_enabled"); else _explicitNullProperties?.Remove("alert_enabled"); } }
         private bool? _explicitNullValueAlertEnabled = default!;
         /// <summary>Deprecated and ignored: saved-query alerting and rules were removed.</summary>

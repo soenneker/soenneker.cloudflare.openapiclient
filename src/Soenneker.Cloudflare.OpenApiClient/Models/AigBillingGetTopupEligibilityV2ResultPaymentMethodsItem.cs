@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("usable") is { } nullNodeUsable && nullNodeUsable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usable = null;
         }
 
-        /// <summary>Card brand. Present for cards.</summary>
+        /// <summary>Card brand. Present for cards, including cards saved in a wallet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Brand { get => _explicitNullValueBrand; set { _explicitNullValueBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand"); else _explicitNullProperties?.Remove("brand"); } }
@@ -47,10 +47,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Brand { get => _explicitNullValueBrand; set { _explicitNullValueBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand"); else _explicitNullProperties?.Remove("brand"); } }
         private string _explicitNullValueBrand = default!;
 #endif
-        /// <summary>Expiration month, 1 to 12. Present for cards.</summary>
+        /// <summary>Expiration month, 1 to 12. Present for cards, including cards saved in a wallet.</summary>
         public int? ExpMonth { get => _explicitNullValueExpMonth; set { _explicitNullValueExpMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exp_month"); else _explicitNullProperties?.Remove("exp_month"); } }
         private int? _explicitNullValueExpMonth = default!;
-        /// <summary>Four-digit expiration year. Present for cards.</summary>
+        /// <summary>Four-digit expiration year. Present for cards, including cards saved in a wallet.</summary>
         public int? ExpYear { get => _explicitNullValueExpYear; set { _explicitNullValueExpYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exp_year"); else _explicitNullProperties?.Remove("exp_year"); } }
         private int? _explicitNullValueExpYear = default!;
         /// <summary>Payment method identifier.</summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether this is the account&apos;s default payment method.</summary>
         public bool? IsDefault { get => _explicitNullValueIsDefault; set { _explicitNullValueIsDefault = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_default"); else _explicitNullProperties?.Remove("is_default"); } }
         private bool? _explicitNullValueIsDefault = default!;
-        /// <summary>Last 4 digits. Present for cards.</summary>
+        /// <summary>Last 4 digits. Present for cards, including cards saved in a wallet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Last4 { get => _explicitNullValueLast4; set { _explicitNullValueLast4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last4"); else _explicitNullProperties?.Remove("last4"); } }
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Last4 { get => _explicitNullValueLast4; set { _explicitNullValueLast4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last4"); else _explicitNullProperties?.Remove("last4"); } }
         private string _explicitNullValueLast4 = default!;
 #endif
-        /// <summary>Payment method type.</summary>
+        /// <summary>Payment method type. A card saved in a wallet has the wallet type and its card details. `link` is a card saved with Link, which has card details, or a Link payment that no card funds, which has none.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.AigBillingGetTopupEligibilityV2ResultPaymentMethodsItemType? _explicitNullValueType = default!;
         /// <summary>Why this payment method can&apos;t pay for a top-up. Present only when `usable` is false.</summary>
