@@ -57,22 +57,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Tunnel hostnames on the requested page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostname>? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostname>? _explicitNullValueResult = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecord>? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecord>? _explicitNullValueResult = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostname> Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostname> _explicitNullValueResult = default!;
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecord> Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecord> _explicitNullValueResult = default!;
 #endif
         /// <summary>Pagination metadata for the requested page of tunnel hostnames.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo? ResultInfo { get => _explicitNullValueResultInfo; set { _explicitNullValueResultInfo = value; AdditionalData?.Remove("result_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_info"); else _explicitNullProperties?.Remove("result_info"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo? _explicitNullValueResultInfo = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollectionAllOf2ResultInfo? ResultInfo { get => _explicitNullValueResultInfo; set { _explicitNullValueResultInfo = value; AdditionalData?.Remove("result_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_info"); else _explicitNullProperties?.Remove("result_info"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollectionAllOf2ResultInfo? _explicitNullValueResultInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo ResultInfo { get => _explicitNullValueResultInfo; set { _explicitNullValueResultInfo = value; AdditionalData?.Remove("result_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_info"); else _explicitNullProperties?.Remove("result_info"); } }
-        private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo _explicitNullValueResultInfo = default!;
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollectionAllOf2ResultInfo ResultInfo { get => _explicitNullValueResultInfo; set { _explicitNullValueResultInfo = value; AdditionalData?.Remove("result_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_info"); else _explicitNullProperties?.Remove("result_info"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollectionAllOf2ResultInfo _explicitNullValueResultInfo = default!;
 #endif
         /// <summary>Whether the API call was successful</summary>
         public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; AdditionalData?.Remove("success"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
@@ -104,8 +104,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelHostnameList4XxResponseErrors>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelHostnameList4XxResponseErrors.CreateFromDiscriminatorValue); } },
                 { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelHostnameList4XxResponseMessages>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelHostnameList4XxResponseMessages.CreateFromDiscriminatorValue); } },
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostname>(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostname.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecord>(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecord.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollectionAllOf2ResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollectionAllOf2ResultInfo.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -118,8 +118,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelHostnameList4XxResponseErrors>("errors", Errors);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelHostnameList4XxResponseMessages>("messages", Messages);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostname>("result", Result);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo>("result_info", ResultInfo);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecord>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollectionAllOf2ResultInfo>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

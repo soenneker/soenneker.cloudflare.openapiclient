@@ -77,6 +77,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Monetization;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Moq;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Move;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Networkquality;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Oauth_clients;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Observability;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.One;
@@ -512,6 +513,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates.Mtls_certificatesRequestBuilder Mtls_certificates
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates.Mtls_certificatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The networkquality property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Networkquality.NetworkqualityRequestBuilder Networkquality
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Networkquality.NetworkqualityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The oauth_clients property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Oauth_clients.Oauth_clientsRequestBuilder Oauth_clients

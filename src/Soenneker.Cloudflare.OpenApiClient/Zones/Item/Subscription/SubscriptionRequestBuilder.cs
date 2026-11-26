@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Subscription
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneSubscriptionDeleteZoneSubscription200Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneSubscriptionDeleteZoneSubscription200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists zone subscription details.
+        /// Lists zone subscription details. Zones on the Free plan normally have no zone subscription, so this returns 404 with error code 1207.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsZoneSubscriptionResponseSingle"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Subscription
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsZoneSubscriptionResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsZoneSubscriptionResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a zone subscription, either plan or add-ons.
+        /// Create a zone subscription, either plan or add-ons. Requesting the `free` rate plan does not create a subscription.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsZoneSubscriptionResponseSingle"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Subscription
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsZoneSubscriptionResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsZoneSubscriptionResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates zone subscriptions, either plan or add-ons.
+        /// Updates zone subscriptions, either plan or add-ons. Updating to the `free` rate plan downgrades the zone to the Free plan, after which the zone has no zone subscription.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsZoneSubscriptionResponseSingle"/></returns>
         /// <param name="body">The request body</param>
@@ -153,7 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Subscription
             return requestInfo;
         }
         /// <summary>
-        /// Lists zone subscription details.
+        /// Lists zone subscription details. Zones on the Free plan normally have no zone subscription, so this returns 404 with error code 1207.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -172,7 +172,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Subscription
             return requestInfo;
         }
         /// <summary>
-        /// Create a zone subscription, either plan or add-ons.
+        /// Create a zone subscription, either plan or add-ons. Requesting the `free` rate plan does not create a subscription.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -194,7 +194,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Subscription
             return requestInfo;
         }
         /// <summary>
-        /// Updates zone subscriptions, either plan or add-ons.
+        /// Updates zone subscriptions, either plan or add-ons. Updating to the `free` rate plan downgrades the zone to the Free plan, after which the zone has no zone subscription.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

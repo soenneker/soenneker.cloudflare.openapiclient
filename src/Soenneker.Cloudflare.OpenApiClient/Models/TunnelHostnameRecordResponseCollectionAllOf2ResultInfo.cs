@@ -11,7 +11,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// Pagination metadata for the requested page of tunnel hostnames.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo : IAdditionalDataHolder, IParsable
+    public partial class TunnelHostnameRecordResponseCollectionAllOf2ResultInfo : IAdditionalDataHolder, IParsable
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -43,21 +43,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; AdditionalData?.Remove("total_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count"); else _explicitNullProperties?.Remove("total_count"); } }
         private double? _explicitNullValueTotalCount = default!;
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollectionAllOf2ResultInfo"/> and sets the default values.
         /// </summary>
-        public TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo()
+        public TunnelHostnameRecordResponseCollectionAllOf2ResultInfo()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollectionAllOf2ResultInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollectionAllOf2ResultInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollectionAllOf2ResultInfo(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollectionAllOf2ResultInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

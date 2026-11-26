@@ -30,6 +30,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("airport_code") is { } nullNodeAirportCode && nullNodeAirportCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AirportCode = null;
             if (parseNode.GetChildNode("alert_trigger_preferences") is null) { _explicitNullValueAlertTriggerPreferences = default!; _explicitNullProperties?.Remove("alert_trigger_preferences"); }
             else if (parseNode.GetChildNode("alert_trigger_preferences") is { } nullNodeAlertTriggerPreferences && nullNodeAlertTriggerPreferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertTriggerPreferences = null;
+            if (parseNode.GetChildNode("alert_trigger_preferences_long_window") is null) { _explicitNullValueAlertTriggerPreferencesLongWindow = default!; _explicitNullProperties?.Remove("alert_trigger_preferences_long_window"); }
+            else if (parseNode.GetChildNode("alert_trigger_preferences_long_window") is { } nullNodeAlertTriggerPreferencesLongWindow && nullNodeAlertTriggerPreferencesLongWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertTriggerPreferencesLongWindow = null;
+            if (parseNode.GetChildNode("alert_trigger_preferences_minimum_threshold") is null) { _explicitNullValueAlertTriggerPreferencesMinimumThreshold = default!; _explicitNullProperties?.Remove("alert_trigger_preferences_minimum_threshold"); }
+            else if (parseNode.GetChildNode("alert_trigger_preferences_minimum_threshold") is { } nullNodeAlertTriggerPreferencesMinimumThreshold && nullNodeAlertTriggerPreferencesMinimumThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertTriggerPreferencesMinimumThreshold = null;
+            if (parseNode.GetChildNode("alert_trigger_preferences_operator") is null) { _explicitNullValueAlertTriggerPreferencesOperator = default!; _explicitNullProperties?.Remove("alert_trigger_preferences_operator"); }
+            else if (parseNode.GetChildNode("alert_trigger_preferences_operator") is { } nullNodeAlertTriggerPreferencesOperator && nullNodeAlertTriggerPreferencesOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertTriggerPreferencesOperator = null;
+            if (parseNode.GetChildNode("alert_trigger_preferences_short_window") is null) { _explicitNullValueAlertTriggerPreferencesShortWindow = default!; _explicitNullProperties?.Remove("alert_trigger_preferences_short_window"); }
+            else if (parseNode.GetChildNode("alert_trigger_preferences_short_window") is { } nullNodeAlertTriggerPreferencesShortWindow && nullNodeAlertTriggerPreferencesShortWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertTriggerPreferencesShortWindow = null;
             if (parseNode.GetChildNode("alert_trigger_preferences_value") is null) { _explicitNullValueAlertTriggerPreferencesValue = default!; _explicitNullProperties?.Remove("alert_trigger_preferences_value"); }
             else if (parseNode.GetChildNode("alert_trigger_preferences_value") is { } nullNodeAlertTriggerPreferencesValue && nullNodeAlertTriggerPreferencesValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertTriggerPreferencesValue = null;
             if (parseNode.GetChildNode("check_id") is null) { _explicitNullValueCheckId = default!; _explicitNullProperties?.Remove("check_id"); }
@@ -44,6 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("event_source") is { } nullNodeEventSource && nullNodeEventSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventSource = null;
             if (parseNode.GetChildNode("event_type") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("event_type"); }
             else if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("execution_interval") is null) { _explicitNullValueExecutionInterval = default!; _explicitNullProperties?.Remove("execution_interval"); }
+            else if (parseNode.GetChildNode("execution_interval") is { } nullNodeExecutionInterval && nullNodeExecutionInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionInterval = null;
             if (parseNode.GetChildNode("group_by") is null) { _explicitNullValueGroupBy = default!; _explicitNullProperties?.Remove("group_by"); }
             else if (parseNode.GetChildNode("group_by") is { } nullNodeGroupBy && nullNodeGroupBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupBy = null;
             if (parseNode.GetChildNode("health_check_id") is null) { _explicitNullValueHealthCheckId = default!; _explicitNullProperties?.Remove("health_check_id"); }
@@ -88,6 +98,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if (parseNode.GetChildNode("services") is { } nullNodeServices && nullNodeServices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Services = null;
             if (parseNode.GetChildNode("slo") is null) { _explicitNullValueSlo = default!; _explicitNullProperties?.Remove("slo"); }
             else if (parseNode.GetChildNode("slo") is { } nullNodeSlo && nullNodeSlo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slo = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
             if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
             if (parseNode.GetChildNode("target_hostname") is null) { _explicitNullValueTargetHostname = default!; _explicitNullProperties?.Remove("target_hostname"); }
@@ -176,6 +188,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> AlertTriggerPreferences { get => _explicitNullValueAlertTriggerPreferences; set { _explicitNullValueAlertTriggerPreferences = value; AdditionalData?.Remove("alert_trigger_preferences"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_trigger_preferences"); else _explicitNullProperties?.Remove("alert_trigger_preferences"); } }
         private List<string> _explicitNullValueAlertTriggerPreferences = default!;
 #endif
+        /// <summary>Usage depends on specific alert type. Takes at most one value, a duration such as `4h`. custom_analytics requires it when alert_trigger_preferences is slo, zscore_spike, zscore_drop or zscore_spike_and_drop. There it must be at most 24h, and for the z-score types at least six times alert_trigger_preferences_short_window.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AlertTriggerPreferencesLongWindow { get => _explicitNullValueAlertTriggerPreferencesLongWindow; set { _explicitNullValueAlertTriggerPreferencesLongWindow = value; AdditionalData?.Remove("alert_trigger_preferences_long_window"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_trigger_preferences_long_window"); else _explicitNullProperties?.Remove("alert_trigger_preferences_long_window"); } }
+        private List<string>? _explicitNullValueAlertTriggerPreferencesLongWindow = default!;
+#nullable restore
+#else
+        public List<string> AlertTriggerPreferencesLongWindow { get => _explicitNullValueAlertTriggerPreferencesLongWindow; set { _explicitNullValueAlertTriggerPreferencesLongWindow = value; AdditionalData?.Remove("alert_trigger_preferences_long_window"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_trigger_preferences_long_window"); else _explicitNullProperties?.Remove("alert_trigger_preferences_long_window"); } }
+        private List<string> _explicitNullValueAlertTriggerPreferencesLongWindow = default!;
+#endif
+        /// <summary>Usage depends on specific alert type. Takes at most one value, a number as a string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AlertTriggerPreferencesMinimumThreshold { get => _explicitNullValueAlertTriggerPreferencesMinimumThreshold; set { _explicitNullValueAlertTriggerPreferencesMinimumThreshold = value; AdditionalData?.Remove("alert_trigger_preferences_minimum_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_trigger_preferences_minimum_threshold"); else _explicitNullProperties?.Remove("alert_trigger_preferences_minimum_threshold"); } }
+        private List<string>? _explicitNullValueAlertTriggerPreferencesMinimumThreshold = default!;
+#nullable restore
+#else
+        public List<string> AlertTriggerPreferencesMinimumThreshold { get => _explicitNullValueAlertTriggerPreferencesMinimumThreshold; set { _explicitNullValueAlertTriggerPreferencesMinimumThreshold = value; AdditionalData?.Remove("alert_trigger_preferences_minimum_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_trigger_preferences_minimum_threshold"); else _explicitNullProperties?.Remove("alert_trigger_preferences_minimum_threshold"); } }
+        private List<string> _explicitNullValueAlertTriggerPreferencesMinimumThreshold = default!;
+#endif
+        /// <summary>Used for configuring custom_analytics, which requires it. Takes exactly one value, the operator that compares the result with alert_trigger_preferences_value. It must be `&lt;` unless alert_trigger_preferences is threshold.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersAlertTriggerPreferencesOperatorItem?>? AlertTriggerPreferencesOperator { get => _explicitNullValueAlertTriggerPreferencesOperator; set { _explicitNullValueAlertTriggerPreferencesOperator = value; AdditionalData?.Remove("alert_trigger_preferences_operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_trigger_preferences_operator"); else _explicitNullProperties?.Remove("alert_trigger_preferences_operator"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersAlertTriggerPreferencesOperatorItem?>? _explicitNullValueAlertTriggerPreferencesOperator = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersAlertTriggerPreferencesOperatorItem?> AlertTriggerPreferencesOperator { get => _explicitNullValueAlertTriggerPreferencesOperator; set { _explicitNullValueAlertTriggerPreferencesOperator = value; AdditionalData?.Remove("alert_trigger_preferences_operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_trigger_preferences_operator"); else _explicitNullProperties?.Remove("alert_trigger_preferences_operator"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersAlertTriggerPreferencesOperatorItem?> _explicitNullValueAlertTriggerPreferencesOperator = default!;
+#endif
+        /// <summary>Usage depends on specific alert type. Takes at most one value, a duration such as `5m`. custom_analytics requires it, and it must be at least 1m there. queues_lag_alert requires it, at least 5m.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AlertTriggerPreferencesShortWindow { get => _explicitNullValueAlertTriggerPreferencesShortWindow; set { _explicitNullValueAlertTriggerPreferencesShortWindow = value; AdditionalData?.Remove("alert_trigger_preferences_short_window"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_trigger_preferences_short_window"); else _explicitNullProperties?.Remove("alert_trigger_preferences_short_window"); } }
+        private List<string>? _explicitNullValueAlertTriggerPreferencesShortWindow = default!;
+#nullable restore
+#else
+        public List<string> AlertTriggerPreferencesShortWindow { get => _explicitNullValueAlertTriggerPreferencesShortWindow; set { _explicitNullValueAlertTriggerPreferencesShortWindow = value; AdditionalData?.Remove("alert_trigger_preferences_short_window"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_trigger_preferences_short_window"); else _explicitNullProperties?.Remove("alert_trigger_preferences_short_window"); } }
+        private List<string> _explicitNullValueAlertTriggerPreferencesShortWindow = default!;
+#endif
         /// <summary>Usage depends on specific alert type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -245,6 +297,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("event_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
         private List<string> _explicitNullValueEventType = default!;
+#endif
+        /// <summary>Used for configuring custom_analytics when source is sql_api. Other sources reject it. Takes at most one value, how often the query runs, as a duration in whole seconds such as `5m`. It can&apos;t be shorter than the minimum for the query, which is 1m, or 10m for Log Explorer datasets. If it&apos;s omitted, the API sets it to that minimum.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ExecutionInterval { get => _explicitNullValueExecutionInterval; set { _explicitNullValueExecutionInterval = value; AdditionalData?.Remove("execution_interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_interval"); else _explicitNullProperties?.Remove("execution_interval"); } }
+        private List<string>? _explicitNullValueExecutionInterval = default!;
+#nullable restore
+#else
+        public List<string> ExecutionInterval { get => _explicitNullValueExecutionInterval; set { _explicitNullValueExecutionInterval = value; AdditionalData?.Remove("execution_interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_interval"); else _explicitNullProperties?.Remove("execution_interval"); } }
+        private List<string> _explicitNullValueExecutionInterval = default!;
 #endif
         /// <summary>Usage depends on specific alert type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -466,6 +528,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Slo { get => _explicitNullValueSlo; set { _explicitNullValueSlo = value; AdditionalData?.Remove("slo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slo"); else _explicitNullProperties?.Remove("slo"); } }
         private List<string> _explicitNullValueSlo = default!;
 #endif
+        /// <summary>Used for configuring custom_analytics, which requires it. Takes exactly one value, the dataset the alert queries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersSourceItem?>? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersSourceItem?>? _explicitNullValueSource = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersSourceItem?> Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private List<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersSourceItem?> _explicitNullValueSource = default!;
+#endif
         /// <summary>Used for configuring health_check_status_notification</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -609,7 +681,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(47)
+            return new Dictionary<string, Action<IParseNode>>(53)
             {
                 { "actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "affected_asns", n => { AffectedAsns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -617,6 +689,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "affected_locations", n => { AffectedLocations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "airport_code", n => { AirportCode = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "alert_trigger_preferences", n => { AlertTriggerPreferences = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "alert_trigger_preferences_long_window", n => { AlertTriggerPreferencesLongWindow = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "alert_trigger_preferences_minimum_threshold", n => { AlertTriggerPreferencesMinimumThreshold = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "alert_trigger_preferences_operator", n => { AlertTriggerPreferencesOperator = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersAlertTriggerPreferencesOperatorItem>()?.AsList(); } },
+                { "alert_trigger_preferences_short_window", n => { AlertTriggerPreferencesShortWindow = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "alert_trigger_preferences_value", n => { AlertTriggerPreferencesValue = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "check_id", n => { CheckId = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -624,6 +700,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "event", n => { Event = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "event_source", n => { EventSource = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "event_type", n => { EventType = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "execution_interval", n => { ExecutionInterval = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "group_by", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "health_check_id", n => { HealthCheckId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "incident_impact", n => { IncidentImpact = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersIncidentImpactItem>()?.AsList(); } },
@@ -646,6 +723,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "selectors", n => { Selectors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "services", n => { Services = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "slo", n => { Slo = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "source", n => { Source = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersSourceItem>()?.AsList(); } },
                 { "status", n => { Status = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "target_hostname", n => { TargetHostname = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "target_ip", n => { TargetIp = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -673,6 +751,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("affected_locations", AffectedLocations);
             writer.WriteCollectionOfPrimitiveValues<string>("airport_code", AirportCode);
             writer.WriteCollectionOfPrimitiveValues<string>("alert_trigger_preferences", AlertTriggerPreferences);
+            writer.WriteCollectionOfPrimitiveValues<string>("alert_trigger_preferences_long_window", AlertTriggerPreferencesLongWindow);
+            writer.WriteCollectionOfPrimitiveValues<string>("alert_trigger_preferences_minimum_threshold", AlertTriggerPreferencesMinimumThreshold);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersAlertTriggerPreferencesOperatorItem>("alert_trigger_preferences_operator", AlertTriggerPreferencesOperator);
+            writer.WriteCollectionOfPrimitiveValues<string>("alert_trigger_preferences_short_window", AlertTriggerPreferencesShortWindow);
             writer.WriteCollectionOfPrimitiveValues<string>("alert_trigger_preferences_value", AlertTriggerPreferencesValue);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("check_id", CheckId);
             writer.WriteCollectionOfPrimitiveValues<string>("enabled", Enabled);
@@ -680,6 +762,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("event", Event);
             writer.WriteCollectionOfPrimitiveValues<string>("event_source", EventSource);
             writer.WriteCollectionOfPrimitiveValues<string>("event_type", EventType);
+            writer.WriteCollectionOfPrimitiveValues<string>("execution_interval", ExecutionInterval);
             writer.WriteCollectionOfPrimitiveValues<string>("group_by", GroupBy);
             writer.WriteCollectionOfPrimitiveValues<string>("health_check_id", HealthCheckId);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersIncidentImpactItem>("incident_impact", IncidentImpact);
@@ -702,6 +785,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("selectors", Selectors);
             writer.WriteCollectionOfPrimitiveValues<string>("services", Services);
             writer.WriteCollectionOfPrimitiveValues<string>("slo", Slo);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaFiltersSourceItem>("source", Source);
             writer.WriteCollectionOfPrimitiveValues<string>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("target_hostname", TargetHostname);
             writer.WriteCollectionOfPrimitiveValues<string>("target_ip", TargetIp);

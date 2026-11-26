@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TunnelPostTunnelHostnameBody : IAdditionalDataHolder, IParsable
+    public partial class TunnelPatchHostnameRecordBody : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Set to `true` to make the new hostname canonical, replacing any existing canonical hostname.If `false` or omitted, the new hostname is canonical only if the tunnel has no active hostnames.</summary>
+        /// <summary>Makes this hostname canonical. `false` is not accepted; make a different hostname canonical to unset this one.</summary>
         public bool? Canonical { get => _explicitNullValueCanonical; set { _explicitNullValueCanonical = value; AdditionalData?.Remove("canonical"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canonical"); else _explicitNullProperties?.Remove("canonical"); } }
         private bool? _explicitNullValueCanonical = default!;
         /// <summary>A single DNS label assigned to the tunnel. The value is normalized to lowercase and may contain only letters, digits, and internal hyphens.</summary>
@@ -39,21 +39,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         private string _explicitNullValueHostname = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPostTunnelHostnameBody"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPatchHostnameRecordBody"/> and sets the default values.
         /// </summary>
-        public TunnelPostTunnelHostnameBody()
+        public TunnelPatchHostnameRecordBody()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPostTunnelHostnameBody"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPatchHostnameRecordBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPostTunnelHostnameBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPatchHostnameRecordBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPostTunnelHostnameBody(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPatchHostnameRecordBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

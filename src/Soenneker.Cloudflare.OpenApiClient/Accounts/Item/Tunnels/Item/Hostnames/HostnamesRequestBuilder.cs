@@ -49,17 +49,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels.Item.Hostname
         /// <summary>
         /// Lists and filters the hostnames assigned to a tunnel.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelHostnameList4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels.Item.Hostnames.HostnamesRequestBuilder.HostnamesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels.Item.Hostnames.HostnamesRequestBuilder.HostnamesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels.Item.Hostnames.HostnamesRequestBuilder.HostnamesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels.Item.Hostnames.HostnamesRequestBuilder.HostnamesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,23 +68,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels.Item.Hostname
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelHostnameList4XxResponse.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Assigns a hostname to a tunnel. If the tunnel has no active hostnames, the new hostname is always canonical.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseSingle"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseSingle"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelHostnameCreate4XxResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPostTunnelHostnameBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseSingle?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPostHostnameRecordBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPostTunnelHostnameBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseSingle> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPostHostnameRecordBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels.Item.Hostname
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelHostnameCreate4XxResponse.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelHostnameResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelHostnameRecordResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists and filters the hostnames assigned to a tunnel.
@@ -123,11 +123,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels.Item.Hostname
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPostTunnelHostnameBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPostHostnameRecordBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPostTunnelHostnameBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelPostHostnameRecordBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

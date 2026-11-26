@@ -58562,7 +58562,8 @@
                                           "url": {
                                             "type": "string",
                                             "maxLength": 20971520,
-                                            "minLength": 1
+                                            "minLength": 1,
+                                            "x-auditable": false
                                           }
                                         },
                                         "required": [
@@ -58721,7 +58722,8 @@
                                                 "url": {
                                                   "type": "string",
                                                   "maxLength": 20971520,
-                                                  "minLength": 1
+                                                  "minLength": 1,
+                                                  "x-auditable": false
                                                 }
                                               },
                                               "required": [
@@ -60933,7 +60935,8 @@
                                           "url": {
                                             "type": "string",
                                             "maxLength": 20971520,
-                                            "minLength": 1
+                                            "minLength": 1,
+                                            "x-auditable": false
                                           }
                                         },
                                         "required": [
@@ -69677,7 +69680,8 @@
                                           "url": {
                                             "type": "string",
                                             "maxLength": 20971520,
-                                            "minLength": 1
+                                            "minLength": 1,
+                                            "x-auditable": false
                                           }
                                         },
                                         "required": [
@@ -69836,7 +69840,8 @@
                                                 "url": {
                                                   "type": "string",
                                                   "maxLength": 20971520,
-                                                  "minLength": 1
+                                                  "minLength": 1,
+                                                  "x-auditable": false
                                                 }
                                               },
                                               "required": [
@@ -76310,7 +76315,8 @@
                                           "url": {
                                             "type": "string",
                                             "maxLength": 20971520,
-                                            "minLength": 1
+                                            "minLength": 1,
+                                            "x-auditable": false
                                           }
                                         },
                                         "required": [
@@ -78304,7 +78310,8 @@
                                           "url": {
                                             "type": "string",
                                             "maxLength": 20971520,
-                                            "minLength": 1
+                                            "minLength": 1,
+                                            "x-auditable": false
                                           }
                                         },
                                         "required": [
@@ -78464,7 +78471,8 @@
                                                 "url": {
                                                   "type": "string",
                                                   "maxLength": 20971520,
-                                                  "minLength": 1
+                                                  "minLength": 1,
+                                                  "x-auditable": false
                                                 }
                                               },
                                               "required": [
@@ -79257,7 +79265,8 @@
                                           "url": {
                                             "type": "string",
                                             "maxLength": 20971520,
-                                            "minLength": 1
+                                            "minLength": 1,
+                                            "x-auditable": false
                                           }
                                         },
                                         "required": [
@@ -114533,7 +114542,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -114549,7 +114559,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -114685,12 +114696,14 @@
                       "password": {
                         "type": "string",
                         "minLength": 1,
+                        "x-auditable": false,
                         "x-forge-sensitive": true,
                         "x-sensitive": true
                       },
                       "username": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "x-auditable": false
                       }
                     },
                     "required": [
@@ -114805,7 +114818,8 @@
                           "type": "string"
                         },
                         "value": {
-                          "type": "string"
+                          "type": "string",
+                          "x-auditable": false
                         }
                       },
                       "required": [
@@ -114824,7 +114838,8 @@
                     "default": {},
                     "properties": {
                       "referer": {
-                        "type": "string"
+                        "type": "string",
+                        "x-auditable": false
                       },
                       "referrerPolicy": {
                         "type": "string"
@@ -115034,7 +115049,8 @@
                   "setExtraHTTPHeaders": {
                     "type": "object",
                     "additionalProperties": {
-                      "type": "string"
+                      "type": "string",
+                      "x-auditable": false
                     }
                   },
                   "setJavaScriptEnabled": {
@@ -115044,7 +115060,8 @@
                     "description": "URL to navigate to, eg. `https://example.com`.",
                     "type": "string",
                     "format": "uri",
-                    "example": "https://example.com/"
+                    "example": "https://example.com/",
+                    "x-auditable": false
                   },
                   "userAgent": {
                     "type": "string",
@@ -115581,7 +115598,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -115597,7 +115615,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -115733,12 +115752,14 @@
                       "password": {
                         "type": "string",
                         "minLength": 1,
+                        "x-auditable": false,
                         "x-forge-sensitive": true,
                         "x-sensitive": true
                       },
                       "username": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "x-auditable": false
                       }
                     },
                     "required": [
@@ -115853,7 +115874,8 @@
                           "type": "string"
                         },
                         "value": {
-                          "type": "string"
+                          "type": "string",
+                          "x-auditable": false
                         }
                       },
                       "required": [
@@ -115872,7 +115894,8 @@
                     "default": {},
                     "properties": {
                       "referer": {
-                        "type": "string"
+                        "type": "string",
+                        "x-auditable": false
                       },
                       "referrerPolicy": {
                         "type": "string"
@@ -116076,7 +116099,8 @@
                   "setExtraHTTPHeaders": {
                     "type": "object",
                     "additionalProperties": {
-                      "type": "string"
+                      "type": "string",
+                      "x-auditable": false
                     }
                   },
                   "setJavaScriptEnabled": {
@@ -116086,7 +116110,8 @@
                     "description": "URL to navigate to, eg. `https://example.com`.",
                     "type": "string",
                     "format": "uri",
-                    "example": "https://example.com/"
+                    "example": "https://example.com/",
+                    "x-auditable": false
                   },
                   "userAgent": {
                     "type": "string",
@@ -116597,7 +116622,8 @@
                             },
                             "url": {
                               "type": "string",
-                              "format": "uri"
+                              "format": "uri",
+                              "x-auditable": false
                             }
                           },
                           "type": "object"
@@ -116613,7 +116639,8 @@
                             },
                             "url": {
                               "type": "string",
-                              "format": "uri"
+                              "format": "uri",
+                              "x-auditable": false
                             }
                           },
                           "type": "object"
@@ -116749,12 +116776,14 @@
                           "password": {
                             "type": "string",
                             "minLength": 1,
+                            "x-auditable": false,
                             "x-forge-sensitive": true,
                             "x-sensitive": true
                           },
                           "username": {
                             "type": "string",
-                            "minLength": 1
+                            "minLength": 1,
+                            "x-auditable": false
                           }
                         },
                         "required": [
@@ -116894,7 +116923,8 @@
                               "type": "string"
                             },
                             "value": {
-                              "type": "string"
+                              "type": "string",
+                              "x-auditable": false
                             }
                           },
                           "required": [
@@ -116982,7 +117012,8 @@
                         "default": {},
                         "properties": {
                           "referer": {
-                            "type": "string"
+                            "type": "string",
+                            "x-auditable": false
                           },
                           "referrerPolicy": {
                             "type": "string"
@@ -117295,7 +117326,8 @@
                       "setExtraHTTPHeaders": {
                         "type": "object",
                         "additionalProperties": {
-                          "type": "string"
+                          "type": "string",
+                          "x-auditable": false
                         }
                       },
                       "setJavaScriptEnabled": {
@@ -121264,7 +121296,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -121280,7 +121313,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -121416,12 +121450,14 @@
                       "password": {
                         "type": "string",
                         "minLength": 1,
+                        "x-auditable": false,
                         "x-forge-sensitive": true,
                         "x-sensitive": true
                       },
                       "username": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "x-auditable": false
                       }
                     },
                     "required": [
@@ -121536,7 +121572,8 @@
                           "type": "string"
                         },
                         "value": {
-                          "type": "string"
+                          "type": "string",
+                          "x-auditable": false
                         }
                       },
                       "required": [
@@ -121575,7 +121612,8 @@
                     "default": {},
                     "properties": {
                       "referer": {
-                        "type": "string"
+                        "type": "string",
+                        "x-auditable": false
                       },
                       "referrerPolicy": {
                         "type": "string"
@@ -121799,7 +121837,8 @@
                   "setExtraHTTPHeaders": {
                     "type": "object",
                     "additionalProperties": {
-                      "type": "string"
+                      "type": "string",
+                      "x-auditable": false
                     }
                   },
                   "setJavaScriptEnabled": {
@@ -121809,7 +121848,8 @@
                     "description": "URL to navigate to, eg. `https://example.com`.",
                     "type": "string",
                     "format": "uri",
-                    "example": "https://example.com/"
+                    "example": "https://example.com/",
+                    "x-auditable": false
                   },
                   "userAgent": {
                     "type": "string",
@@ -122338,7 +122378,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -122354,7 +122395,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -122490,12 +122532,14 @@
                       "password": {
                         "type": "string",
                         "minLength": 1,
+                        "x-auditable": false,
                         "x-forge-sensitive": true,
                         "x-sensitive": true
                       },
                       "username": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "x-auditable": false
                       }
                     },
                     "required": [
@@ -122610,7 +122654,8 @@
                           "type": "string"
                         },
                         "value": {
-                          "type": "string"
+                          "type": "string",
+                          "x-auditable": false
                         }
                       },
                       "required": [
@@ -122633,7 +122678,8 @@
                     "default": {},
                     "properties": {
                       "referer": {
-                        "type": "string"
+                        "type": "string",
+                        "x-auditable": false
                       },
                       "referrerPolicy": {
                         "type": "string"
@@ -122837,7 +122883,8 @@
                   "setExtraHTTPHeaders": {
                     "type": "object",
                     "additionalProperties": {
-                      "type": "string"
+                      "type": "string",
+                      "x-auditable": false
                     }
                   },
                   "setJavaScriptEnabled": {
@@ -122847,7 +122894,8 @@
                     "description": "URL to navigate to, eg. `https://example.com`.",
                     "type": "string",
                     "format": "uri",
-                    "example": "https://example.com/"
+                    "example": "https://example.com/",
+                    "x-auditable": false
                   },
                   "userAgent": {
                     "type": "string",
@@ -123375,7 +123423,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -123391,7 +123440,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -123527,12 +123577,14 @@
                       "password": {
                         "type": "string",
                         "minLength": 1,
+                        "x-auditable": false,
                         "x-forge-sensitive": true,
                         "x-sensitive": true
                       },
                       "username": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "x-auditable": false
                       }
                     },
                     "required": [
@@ -123647,7 +123699,8 @@
                           "type": "string"
                         },
                         "value": {
-                          "type": "string"
+                          "type": "string",
+                          "x-auditable": false
                         }
                       },
                       "required": [
@@ -123666,7 +123719,8 @@
                     "default": {},
                     "properties": {
                       "referer": {
-                        "type": "string"
+                        "type": "string",
+                        "x-auditable": false
                       },
                       "referrerPolicy": {
                         "type": "string"
@@ -123870,7 +123924,8 @@
                   "setExtraHTTPHeaders": {
                     "type": "object",
                     "additionalProperties": {
-                      "type": "string"
+                      "type": "string",
+                      "x-auditable": false
                     }
                   },
                   "setJavaScriptEnabled": {
@@ -123880,7 +123935,8 @@
                     "description": "URL to navigate to, eg. `https://example.com`.",
                     "type": "string",
                     "format": "uri",
-                    "example": "https://example.com/"
+                    "example": "https://example.com/",
+                    "x-auditable": false
                   },
                   "userAgent": {
                     "type": "string",
@@ -124401,7 +124457,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -124417,7 +124474,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -124553,12 +124611,14 @@
                       "password": {
                         "type": "string",
                         "minLength": 1,
+                        "x-auditable": false,
                         "x-forge-sensitive": true,
                         "x-sensitive": true
                       },
                       "username": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "x-auditable": false
                       }
                     },
                     "required": [
@@ -124673,7 +124733,8 @@
                           "type": "string"
                         },
                         "value": {
-                          "type": "string"
+                          "type": "string",
+                          "x-auditable": false
                         }
                       },
                       "required": [
@@ -124692,7 +124753,8 @@
                     "default": {},
                     "properties": {
                       "referer": {
-                        "type": "string"
+                        "type": "string",
+                        "x-auditable": false
                       },
                       "referrerPolicy": {
                         "type": "string"
@@ -125049,7 +125111,8 @@
                   "setExtraHTTPHeaders": {
                     "type": "object",
                     "additionalProperties": {
-                      "type": "string"
+                      "type": "string",
+                      "x-auditable": false
                     }
                   },
                   "setJavaScriptEnabled": {
@@ -125059,7 +125122,8 @@
                     "description": "URL to navigate to, eg. `https://example.com`.",
                     "type": "string",
                     "format": "uri",
-                    "example": "https://example.com/"
+                    "example": "https://example.com/",
+                    "x-auditable": false
                   },
                   "userAgent": {
                     "type": "string",
@@ -125947,7 +126011,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -125963,7 +126028,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -126099,12 +126165,14 @@
                       "password": {
                         "type": "string",
                         "minLength": 1,
+                        "x-auditable": false,
                         "x-forge-sensitive": true,
                         "x-sensitive": true
                       },
                       "username": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "x-auditable": false
                       }
                     },
                     "required": [
@@ -126219,7 +126287,8 @@
                           "type": "string"
                         },
                         "value": {
-                          "type": "string"
+                          "type": "string",
+                          "x-auditable": false
                         }
                       },
                       "required": [
@@ -126253,7 +126322,8 @@
                     "default": {},
                     "properties": {
                       "referer": {
-                        "type": "string"
+                        "type": "string",
+                        "x-auditable": false
                       },
                       "referrerPolicy": {
                         "type": "string"
@@ -126457,7 +126527,8 @@
                   "setExtraHTTPHeaders": {
                     "type": "object",
                     "additionalProperties": {
-                      "type": "string"
+                      "type": "string",
+                      "x-auditable": false
                     }
                   },
                   "setJavaScriptEnabled": {
@@ -126467,7 +126538,8 @@
                     "description": "URL to navigate to, eg. `https://example.com`.",
                     "type": "string",
                     "format": "uri",
-                    "example": "https://example.com/"
+                    "example": "https://example.com/",
+                    "x-auditable": false
                   },
                   "userAgent": {
                     "type": "string",
@@ -127062,7 +127134,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -127078,7 +127151,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -127214,12 +127288,14 @@
                       "password": {
                         "type": "string",
                         "minLength": 1,
+                        "x-auditable": false,
                         "x-forge-sensitive": true,
                         "x-sensitive": true
                       },
                       "username": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "x-auditable": false
                       }
                     },
                     "required": [
@@ -127334,7 +127410,8 @@
                           "type": "string"
                         },
                         "value": {
-                          "type": "string"
+                          "type": "string",
+                          "x-auditable": false
                         }
                       },
                       "required": [
@@ -127353,7 +127430,8 @@
                     "default": {},
                     "properties": {
                       "referer": {
-                        "type": "string"
+                        "type": "string",
+                        "x-auditable": false
                       },
                       "referrerPolicy": {
                         "type": "string"
@@ -127655,7 +127733,8 @@
                   "setExtraHTTPHeaders": {
                     "type": "object",
                     "additionalProperties": {
-                      "type": "string"
+                      "type": "string",
+                      "x-auditable": false
                     }
                   },
                   "setJavaScriptEnabled": {
@@ -127665,7 +127744,8 @@
                     "description": "URL to navigate to, eg. `https://example.com`.",
                     "type": "string",
                     "format": "uri",
-                    "example": "https://example.com/"
+                    "example": "https://example.com/",
+                    "x-auditable": false
                   },
                   "userAgent": {
                     "type": "string",
@@ -128175,6 +128255,14 @@
           "200": {
             "description": "Returns the script result as `{ success: true, result }`. Non-JSON output is returned as is. The `cf-browser-session-id` and `cf-browser-target-id` headers identify the session.",
             "headers": {
+              "cf-browser-script-library": {
+                "description": "Library the script ran with: the `@cloudflare/playwright` or `@cloudflare/puppeteer` npm package and its version (`<package>@<version>`), or `cdp` when no `library` was set.",
+                "required": true,
+                "schema": {
+                  "description": "Library the script ran with: the `@cloudflare/playwright` or `@cloudflare/puppeteer` npm package and its version (`<package>@<version>`), or `cdp` when no `library` was set.",
+                  "type": "string"
+                }
+              },
               "cf-browser-session-id": {
                 "description": "Browser session the script ran in.",
                 "schema": {
@@ -128344,6 +128432,14 @@
           "408": {
             "description": "The script exceeded its timeout. The session stays open; its headers identify it for a retry or close.",
             "headers": {
+              "cf-browser-script-library": {
+                "description": "Library the script ran with: the `@cloudflare/playwright` or `@cloudflare/puppeteer` npm package and its version (`<package>@<version>`), or `cdp` when no `library` was set.",
+                "required": true,
+                "schema": {
+                  "description": "Library the script ran with: the `@cloudflare/playwright` or `@cloudflare/puppeteer` npm package and its version (`<package>@<version>`), or `cdp` when no `library` was set.",
+                  "type": "string"
+                }
+              },
               "cf-browser-session-id": {
                 "description": "Browser session the script ran in.",
                 "schema": {
@@ -128452,8 +128548,16 @@
             }
           },
           "422": {
-            "description": "The script threw or failed to compile. The session stays open; its headers identify it for a retry or close.",
+            "description": "The script threw, failed to compile, or returned a `Response` with a JSON content type whose body is not valid JSON. The session stays open; its headers identify it for a retry or close.",
             "headers": {
+              "cf-browser-script-library": {
+                "description": "Library the script ran with: the `@cloudflare/playwright` or `@cloudflare/puppeteer` npm package and its version (`<package>@<version>`), or `cdp` when no `library` was set.",
+                "required": true,
+                "schema": {
+                  "description": "Library the script ran with: the `@cloudflare/playwright` or `@cloudflare/puppeteer` npm package and its version (`<package>@<version>`), or `cdp` when no `library` was set.",
+                  "type": "string"
+                }
+              },
               "cf-browser-session-id": {
                 "description": "Browser session the script ran in.",
                 "schema": {
@@ -128798,6 +128902,16 @@
         "responses": {
           "200": {
             "description": "Returns the script result as `{ success: true, result }`. Non-JSON output is returned as is.",
+            "headers": {
+              "cf-browser-script-library": {
+                "description": "Library the script ran with: the `@cloudflare/playwright` or `@cloudflare/puppeteer` npm package and its version (`<package>@<version>`), or `cdp` when no `library` was set.",
+                "required": true,
+                "schema": {
+                  "description": "Library the script ran with: the `@cloudflare/playwright` or `@cloudflare/puppeteer` npm package and its version (`<package>@<version>`), or `cdp` when no `library` was set.",
+                  "type": "string"
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -128951,6 +129065,16 @@
           },
           "408": {
             "description": "The script exceeded its timeout.",
+            "headers": {
+              "cf-browser-script-library": {
+                "description": "Library the script ran with: the `@cloudflare/playwright` or `@cloudflare/puppeteer` npm package and its version (`<package>@<version>`), or `cdp` when no `library` was set.",
+                "required": true,
+                "schema": {
+                  "description": "Library the script ran with: the `@cloudflare/playwright` or `@cloudflare/puppeteer` npm package and its version (`<package>@<version>`), or `cdp` when no `library` was set.",
+                  "type": "string"
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -129067,7 +129191,17 @@
             }
           },
           "422": {
-            "description": "The script threw or failed to compile.",
+            "description": "The script threw, failed to compile, or returned a `Response` with a JSON content type whose body is not valid JSON.",
+            "headers": {
+              "cf-browser-script-library": {
+                "description": "Library the script ran with: the `@cloudflare/playwright` or `@cloudflare/puppeteer` npm package and its version (`<package>@<version>`), or `cdp` when no `library` was set.",
+                "required": true,
+                "schema": {
+                  "description": "Library the script ran with: the `@cloudflare/playwright` or `@cloudflare/puppeteer` npm package and its version (`<package>@<version>`), or `cdp` when no `library` was set.",
+                  "type": "string"
+                }
+              }
+            },
             "content": {
               "application/json": {
                 "schema": {
@@ -129270,7 +129404,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -129286,7 +129421,8 @@
                         },
                         "url": {
                           "type": "string",
-                          "format": "uri"
+                          "format": "uri",
+                          "x-auditable": false
                         }
                       },
                       "type": "object"
@@ -129422,12 +129558,14 @@
                       "password": {
                         "type": "string",
                         "minLength": 1,
+                        "x-auditable": false,
                         "x-forge-sensitive": true,
                         "x-sensitive": true
                       },
                       "username": {
                         "type": "string",
-                        "minLength": 1
+                        "minLength": 1,
+                        "x-auditable": false
                       }
                     },
                     "required": [
@@ -129542,7 +129680,8 @@
                           "type": "string"
                         },
                         "value": {
-                          "type": "string"
+                          "type": "string",
+                          "x-auditable": false
                         }
                       },
                       "required": [
@@ -129620,7 +129759,8 @@
                     "default": {},
                     "properties": {
                       "referer": {
-                        "type": "string"
+                        "type": "string",
+                        "x-auditable": false
                       },
                       "referrerPolicy": {
                         "type": "string"
@@ -130083,7 +130223,8 @@
                   "setExtraHTTPHeaders": {
                     "type": "object",
                     "additionalProperties": {
-                      "type": "string"
+                      "type": "string",
+                      "x-auditable": false
                     }
                   },
                   "setJavaScriptEnabled": {
@@ -130093,7 +130234,8 @@
                     "description": "URL to navigate to, eg. `https://example.com`.",
                     "type": "string",
                     "format": "uri",
-                    "example": "https://example.com/"
+                    "example": "https://example.com/",
+                    "x-auditable": false
                   },
                   "userAgent": {
                     "type": "string",
@@ -291234,6 +291376,313 @@
         ]
       }
     },
+    "/accounts/{account_id}/networkquality/settings": {
+      "get": {
+        "operationId": "network-quality-get-settings",
+        "summary": "Get account Network Quality Test settings",
+        "description": "Returns Network Quality Test settings for an account.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "description": "Cloudflare account identifier.",
+              "type": "string",
+              "example": "0123456789abcdef0123456789abcdef",
+              "pattern": "^[0-9a-f]{32}$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Current settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/networkquality_SettingsSuccess"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Account is not entitled to Network Quality Test",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/networkquality_ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Account access could not be verified",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/networkquality_ErrorEnvelope"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Settings"
+        ],
+        "x-api-token-group": [
+          "Network Quality Read",
+          "Network Quality Write"
+        ],
+        "x-cfPermissionsRequired": {
+          "enum": [
+            "com.cloudflare.api.account.networkquality.read"
+          ]
+        },
+        "x-fern-availability": "beta",
+        "x-fern-sdk-group-name": "network-quality.settings",
+        "x-fern-sdk-method-name": "get",
+        "x-forge-availability": "beta",
+        "x-forge-group-name": "network-quality.settings",
+        "x-forge-method-name": "get",
+        "x-forge-oauth-scopes": [
+          "cfspeed.read",
+          "cfspeed.write"
+        ],
+        "x-stability": "beta"
+      },
+      "put": {
+        "operationId": "network-quality-update-settings",
+        "summary": "Update account Network Quality Test settings",
+        "description": "Updates Network Quality Test settings for an account.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "description": "Cloudflare account identifier.",
+              "type": "string",
+              "example": "0123456789abcdef0123456789abcdef",
+              "pattern": "^[0-9a-f]{32}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/networkquality_SettingsUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Updated settings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/networkquality_SettingsSuccess"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request body",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/networkquality_ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Account is not entitled to Network Quality Test",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/networkquality_ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Account access could not be verified",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/networkquality_ErrorEnvelope"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Settings"
+        ],
+        "x-api-token-group": [
+          "Network Quality Write"
+        ],
+        "x-cfPermissionsRequired": {
+          "enum": [
+            "com.cloudflare.api.account.networkquality.update"
+          ]
+        },
+        "x-fern-availability": "beta",
+        "x-fern-sdk-group-name": "network-quality.settings",
+        "x-fern-sdk-method-name": "update",
+        "x-forge-availability": "beta",
+        "x-forge-group-name": "network-quality.settings",
+        "x-forge-method-name": "update",
+        "x-forge-oauth-scopes": [
+          "cfspeed.write"
+        ],
+        "x-stability": "beta"
+      }
+    },
+    "/accounts/{account_id}/networkquality/token": {
+      "post": {
+        "operationId": "network-quality-create-authorization-token",
+        "summary": "Create a Network Quality Test authorization token",
+        "description": "Issues an authorization token for a Network Quality Test client.",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "description": "Cloudflare account identifier.",
+            "required": true,
+            "schema": {
+              "description": "Cloudflare account identifier.",
+              "type": "string",
+              "example": "0123456789abcdef0123456789abcdef",
+              "pattern": "^[0-9a-f]{32}$"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/networkquality_TokenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Authorization token",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/networkquality_TokenSuccess"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request body",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/networkquality_ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Account is not entitled to Network Quality Test, or has it disabled",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/networkquality_ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Customer not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/networkquality_ErrorEnvelope"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many authorization token requests",
+            "headers": {
+              "Retry-After": {
+                "description": "Seconds remaining before another token can be issued for this eyeball",
+                "schema": {
+                  "type": "integer"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/networkquality_ErrorEnvelope"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Tokens"
+        ],
+        "x-api-token-group": [
+          "Network Quality Write"
+        ],
+        "x-cfPermissionsRequired": {
+          "enum": [
+            "com.cloudflare.api.account.networkquality.create"
+          ]
+        },
+        "x-fern-availability": "beta",
+        "x-fern-sdk-group-name": "network-quality.tokens",
+        "x-fern-sdk-method-name": "create",
+        "x-forge-availability": "beta",
+        "x-forge-group-name": "network-quality.tokens",
+        "x-forge-method-name": "create",
+        "x-forge-oauth-scopes": [
+          "cfspeed.write"
+        ],
+        "x-stability": "beta"
+      }
+    },
     "/accounts/{account_id}/oauth_clients": {
       "get": {
         "operationId": "oauth-clients-list",
@@ -315926,6 +316375,7 @@
                         "stream_key": {
                           "description": "Unique key for accessing each livestream. Empty if the livestream is disabled.",
                           "type": "string",
+                          "x-auditable": false,
                           "x-forge-sensitive": true,
                           "x-sensitive": true
                         }
@@ -342560,7 +343010,8 @@
                   "url": {
                     "description": "URL of the watermark image to copy.",
                     "type": "string",
-                    "format": "uri"
+                    "format": "uri",
+                    "x-auditable": false
                   }
                 }
               }
@@ -349607,7 +350058,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_collection"
+                  "$ref": "#/components/schemas/tunnel_hostname_record_response_collection"
                 }
               }
             }
@@ -349619,7 +350070,7 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_collection"
+                      "$ref": "#/components/schemas/tunnel_hostname_record_response_collection"
                     },
                     {
                       "$ref": "#/components/schemas/tunnel_api-response-common-failure"
@@ -349701,7 +350152,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/tunnel_post_tunnel_hostname_body"
+                "$ref": "#/components/schemas/tunnel_post_hostname_record_body"
               }
             }
           }
@@ -349712,7 +350163,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                  "$ref": "#/components/schemas/tunnel_hostname_record_response_single"
                 }
               }
             }
@@ -349724,7 +350175,7 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                      "$ref": "#/components/schemas/tunnel_hostname_record_response_single"
                     },
                     {
                       "$ref": "#/components/schemas/tunnel_api-response-common-failure"
@@ -349785,7 +350236,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/tunnel_tunnel_hostname_id"
+              "$ref": "#/components/schemas/tunnel_hostname_record_id"
             }
           }
         ],
@@ -349795,7 +350246,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                  "$ref": "#/components/schemas/tunnel_hostname_record_response_single"
                 }
               }
             }
@@ -349807,7 +350258,7 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                      "$ref": "#/components/schemas/tunnel_hostname_record_response_single"
                     },
                     {
                       "$ref": "#/components/schemas/tunnel_api-response-common-failure"
@@ -349877,7 +350328,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/tunnel_tunnel_hostname_id"
+              "$ref": "#/components/schemas/tunnel_hostname_record_id"
             }
           }
         ],
@@ -349887,7 +350338,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                  "$ref": "#/components/schemas/tunnel_hostname_record_response_single"
                 }
               }
             }
@@ -349899,7 +350350,7 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                      "$ref": "#/components/schemas/tunnel_hostname_record_response_single"
                     },
                     {
                       "$ref": "#/components/schemas/tunnel_api-response-common-failure"
@@ -349980,7 +350431,7 @@
             "in": "path",
             "required": true,
             "schema": {
-              "$ref": "#/components/schemas/tunnel_tunnel_hostname_id"
+              "$ref": "#/components/schemas/tunnel_hostname_record_id"
             }
           }
         ],
@@ -349989,7 +350440,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/tunnel_patch_tunnel_hostname_body"
+                "$ref": "#/components/schemas/tunnel_patch_hostname_record_body"
               }
             }
           }
@@ -350000,7 +350451,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                  "$ref": "#/components/schemas/tunnel_hostname_record_response_single"
                 }
               }
             }
@@ -350012,7 +350463,7 @@
                 "schema": {
                   "allOf": [
                     {
-                      "$ref": "#/components/schemas/tunnel_tunnel_hostname_response_single"
+                      "$ref": "#/components/schemas/tunnel_hostname_record_response_single"
                     },
                     {
                       "$ref": "#/components/schemas/tunnel_api-response-common-failure"
@@ -366342,19 +366793,13 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Metadata Read-Only",
-          "Workers Editor",
-          "Workers Content Read-Only",
-          "Workers Admin",
-          "Individual Workers Metadata Read-Only",
-          "Individual Workers Editor",
-          "Individual Workers Content Read-Only",
-          "Individual Workers Admin",
-          "Granular Workers Scripts Read",
-          "IAM Test - Granular Workers Read",
           "Workers Tail Read",
           "Workers Scripts Write",
-          "Workers Scripts Read"
+          "Workers Scripts Read",
+          "Workers Admin",
+          "Workers Editor",
+          "Workers Content Read-Only",
+          "Workers Metadata Read-Only"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces",
@@ -366442,11 +366887,9 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Editor",
+          "Workers Scripts Write",
           "Workers Admin",
-          "Individual Workers Editor",
-          "Individual Workers Admin",
-          "Workers Scripts Write"
+          "Workers Editor"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces",
@@ -366519,9 +366962,9 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
+          "Workers Scripts Write",
           "Workers Admin",
-          "Individual Workers Admin",
-          "Workers Scripts Write"
+          "Workers Namespace Admin"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces",
@@ -366592,19 +367035,14 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Metadata Read-Only",
-          "Workers Editor",
-          "Workers Content Read-Only",
-          "Workers Admin",
-          "Individual Workers Metadata Read-Only",
-          "Individual Workers Editor",
-          "Individual Workers Content Read-Only",
-          "Individual Workers Admin",
-          "Granular Workers Scripts Read",
-          "IAM Test - Granular Workers Read",
           "Workers Tail Read",
           "Workers Scripts Write",
-          "Workers Scripts Read"
+          "Workers Scripts Read",
+          "Workers Admin",
+          "Workers Editor",
+          "Workers Content Read-Only",
+          "Workers Metadata Read-Only",
+          "Workers Namespace Admin"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces",
@@ -366700,11 +367138,10 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Editor",
+          "Workers Scripts Write",
           "Workers Admin",
-          "Individual Workers Editor",
-          "Individual Workers Admin",
-          "Workers Scripts Write"
+          "Workers Editor",
+          "Workers Namespace Admin"
         ],
         "x-fern-audiences": [
           "sdk"
@@ -366799,11 +367236,10 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Editor",
+          "Workers Scripts Write",
           "Workers Admin",
-          "Individual Workers Editor",
-          "Individual Workers Admin",
-          "Workers Scripts Write"
+          "Workers Editor",
+          "Workers Namespace Admin"
         ],
         "x-fern-audiences": [
           "sdk"
@@ -366898,9 +367334,10 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
+          "Workers Scripts Write",
           "Workers Admin",
-          "Individual Workers Admin",
-          "Workers Scripts Write"
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
         ],
         "x-fern-audiences": [
           "sdk"
@@ -367001,18 +367438,17 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Metadata Read-Only",
-          "Workers Editor",
-          "Workers Content Read-Only",
-          "Workers Admin",
-          "Individual Workers Metadata Read-Only",
-          "Individual Workers Editor",
-          "Individual Workers Content Read-Only",
-          "Individual Workers Admin",
-          "Granular Workers Scripts Read",
           "Workers Tail Read",
           "Workers Scripts Write",
-          "Workers Scripts Read"
+          "Workers Scripts Read",
+          "Workers Admin",
+          "Workers Editor",
+          "Workers Content Read-Only",
+          "Workers Metadata Read-Only",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor",
+          "Workers Namespace Content Read-Only",
+          "Workers Namespace Metadata Read-Only"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts",
@@ -367107,9 +367543,10 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
+          "Workers Scripts Write",
           "Workers Admin",
-          "Individual Workers Admin",
-          "Workers Scripts Write"
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts",
@@ -367188,19 +367625,17 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Metadata Read-Only",
-          "Workers Editor",
-          "Workers Content Read-Only",
-          "Workers Admin",
-          "Individual Workers Metadata Read-Only",
-          "Individual Workers Editor",
-          "Individual Workers Content Read-Only",
-          "Individual Workers Admin",
-          "Granular Workers Scripts Read",
-          "IAM Test - Granular Workers Read",
           "Workers Tail Read",
           "Workers Scripts Write",
-          "Workers Scripts Read"
+          "Workers Scripts Read",
+          "Workers Admin",
+          "Workers Editor",
+          "Workers Content Read-Only",
+          "Workers Metadata Read-Only",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor",
+          "Workers Namespace Content Read-Only",
+          "Workers Namespace Metadata Read-Only"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts",
@@ -367283,8 +367718,10 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
+          "Workers Scripts Write",
           "Workers Admin",
-          "Workers Scripts Write"
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
         ],
         "x-fern-audiences": [
           "sdk"
@@ -367375,6 +367812,12 @@
         ],
         "tags": [
           "Workers for Platforms"
+        ],
+        "x-api-token-group": [
+          "Workers Scripts Write",
+          "Workers Admin",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
         ],
         "x-fern-audiences": [
           "sdk"
@@ -367468,19 +367911,17 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Metadata Read-Only",
-          "Workers Editor",
-          "Workers Content Read-Only",
-          "Workers Admin",
-          "Individual Workers Metadata Read-Only",
-          "Individual Workers Editor",
-          "Individual Workers Content Read-Only",
-          "Individual Workers Admin",
-          "Granular Workers Scripts Read",
-          "IAM Test - Granular Workers Read",
           "Workers Tail Read",
           "Workers Scripts Write",
-          "Workers Scripts Read"
+          "Workers Scripts Read",
+          "Workers Admin",
+          "Workers Editor",
+          "Workers Content Read-Only",
+          "Workers Metadata Read-Only",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor",
+          "Workers Namespace Content Read-Only",
+          "Workers Namespace Metadata Read-Only"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts.bindings",
@@ -367583,19 +368024,15 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Metadata Read-Only",
-          "Workers Editor",
-          "Workers Content Read-Only",
-          "Workers Admin",
-          "Individual Workers Metadata Read-Only",
-          "Individual Workers Editor",
-          "Individual Workers Content Read-Only",
-          "Individual Workers Admin",
-          "Granular Workers Scripts Read",
-          "IAM Test - Granular Workers Read",
           "Workers Tail Read",
           "Workers Scripts Write",
-          "Workers Scripts Read"
+          "Workers Scripts Read",
+          "Workers Admin",
+          "Workers Editor",
+          "Workers Content Read-Only",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor",
+          "Workers Namespace Content Read-Only"
         ],
         "x-fern-audiences": [
           "sdk"
@@ -367745,11 +368182,11 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Editor",
+          "Workers Scripts Write",
           "Workers Admin",
-          "Individual Workers Editor",
-          "Individual Workers Admin",
-          "Workers Scripts Write"
+          "Workers Editor",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
         ],
         "x-fern-audiences": [
           "sdk"
@@ -367851,19 +368288,16 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Metadata Read-Only",
-          "Workers Editor",
-          "Workers Content Read-Only",
-          "Workers Admin",
-          "Individual Workers Metadata Read-Only",
-          "Individual Workers Editor",
-          "Individual Workers Content Read-Only",
-          "Individual Workers Admin",
-          "Granular Workers Scripts Read",
-          "IAM Test - Granular Workers Read",
           "Workers Tail Read",
           "Workers Scripts Write",
-          "Workers Scripts Read"
+          "Workers Scripts Read",
+          "Workers Admin",
+          "Workers Editor",
+          "Workers Content Read-Only",
+          "Workers Metadata Read-Only",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor",
+          "Workers Namespace Content Read-Only"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts.secrets",
@@ -367981,8 +368415,10 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
+          "Workers Scripts Write",
           "Workers Admin",
-          "Workers Scripts Write"
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts.secrets",
@@ -368101,6 +368537,13 @@
         "tags": [
           "Workers for Platforms"
         ],
+        "x-api-token-group": [
+          "Workers Scripts Write",
+          "Workers Admin",
+          "Workers Editor",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
+        ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts.secrets",
         "x-fern-sdk-method-name": "bulk-edit",
@@ -368190,9 +368633,10 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
+          "Workers Scripts Write",
           "Workers Admin",
-          "Individual Workers Admin",
-          "Workers Scripts Write"
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts.secrets",
@@ -368301,19 +368745,16 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Metadata Read-Only",
-          "Workers Editor",
-          "Workers Content Read-Only",
-          "Workers Admin",
-          "Individual Workers Metadata Read-Only",
-          "Individual Workers Editor",
-          "Individual Workers Content Read-Only",
-          "Individual Workers Admin",
-          "Granular Workers Scripts Read",
-          "IAM Test - Granular Workers Read",
           "Workers Tail Read",
           "Workers Scripts Write",
-          "Workers Scripts Read"
+          "Workers Scripts Read",
+          "Workers Admin",
+          "Workers Editor",
+          "Workers Content Read-Only",
+          "Workers Metadata Read-Only",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor",
+          "Workers Namespace Content Read-Only"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts.secrets",
@@ -368410,19 +368851,17 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Metadata Read-Only",
-          "Workers Editor",
-          "Workers Content Read-Only",
-          "Workers Admin",
-          "Individual Workers Metadata Read-Only",
-          "Individual Workers Editor",
-          "Individual Workers Content Read-Only",
-          "Individual Workers Admin",
-          "Granular Workers Scripts Read",
-          "IAM Test - Granular Workers Read",
           "Workers Tail Read",
           "Workers Scripts Write",
-          "Workers Scripts Read"
+          "Workers Scripts Read",
+          "Workers Admin",
+          "Workers Editor",
+          "Workers Content Read-Only",
+          "Workers Metadata Read-Only",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor",
+          "Workers Namespace Content Read-Only",
+          "Workers Namespace Metadata Read-Only"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts.settings",
@@ -368544,11 +368983,11 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Editor",
+          "Workers Scripts Write",
           "Workers Admin",
-          "Individual Workers Editor",
-          "Individual Workers Admin",
-          "Workers Scripts Write"
+          "Workers Editor",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts.settings",
@@ -368648,19 +369087,17 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Metadata Read-Only",
-          "Workers Editor",
-          "Workers Content Read-Only",
-          "Workers Admin",
-          "Individual Workers Metadata Read-Only",
-          "Individual Workers Editor",
-          "Individual Workers Content Read-Only",
-          "Individual Workers Admin",
-          "Granular Workers Scripts Read",
-          "IAM Test - Granular Workers Read",
           "Workers Tail Read",
           "Workers Scripts Write",
-          "Workers Scripts Read"
+          "Workers Scripts Read",
+          "Workers Admin",
+          "Workers Editor",
+          "Workers Content Read-Only",
+          "Workers Metadata Read-Only",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor",
+          "Workers Namespace Content Read-Only",
+          "Workers Namespace Metadata Read-Only"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts.tags",
@@ -368774,11 +369211,11 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Editor",
+          "Workers Scripts Write",
           "Workers Admin",
-          "Individual Workers Editor",
-          "Individual Workers Admin",
-          "Workers Scripts Write"
+          "Workers Editor",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts.tags",
@@ -368909,9 +369346,10 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
+          "Workers Scripts Write",
           "Workers Admin",
-          "Individual Workers Admin",
-          "Workers Scripts Write"
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
         ],
         "x-fern-availability": "generally-available",
         "x-fern-sdk-group-name": "workers-for-platforms.dispatch-namespaces.scripts.tags",
@@ -369020,6 +369458,13 @@
         "tags": [
           "Workers for Platforms"
         ],
+        "x-api-token-group": [
+          "Workers Scripts Write",
+          "Workers Admin",
+          "Workers Editor",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
+        ],
         "x-fern-audiences": [
           "sdk"
         ],
@@ -369103,11 +369548,11 @@
           "Workers for Platforms"
         ],
         "x-api-token-group": [
-          "Workers Editor",
+          "Workers Scripts Write",
           "Workers Admin",
-          "Individual Workers Editor",
-          "Individual Workers Admin",
-          "Workers Scripts Write"
+          "Workers Editor",
+          "Workers Namespace Admin",
+          "Workers Namespace Editor"
         ],
         "x-fern-audiences": [
           "sdk"
@@ -404782,7 +405227,8 @@
                       "type": "object",
                       "properties": {
                         "token": {
-                          "type": "string"
+                          "type": "string",
+                          "x-auditable": false
                         },
                         "websocketUrl": {
                           "type": "string"
@@ -409023,6 +409469,390 @@
         ]
       }
     },
+    "/accounts/{account_id}/zt_risk_scoring/behaviors": {
+      "get": {
+        "operationId": "dlp-risk-score-behaviors-get",
+        "summary": "Get all behaviors and associated configuration",
+        "description": "Gets all risk behaviors for an account and their configuration. The response omits a disabled\nbehavior when the account does not have the gates or entitlements for that behavior.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/risk-scoring_account_id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Risk behaviors for the account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_BehaviorsResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Failed to get risk behaviors.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Zero Trust Risk Scoring"
+        ],
+        "x-api-token-group": [
+          "Zero Trust Read",
+          "Zero Trust Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.risk-scoring.behaviours",
+        "x-fern-sdk-method-name": "get",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "zero-trust.risk-scoring.behaviours",
+        "x-forge-method-name": "get",
+        "x-forge-oauth-scopes": [
+          "teams.read",
+          "teams.write"
+        ]
+      },
+      "put": {
+        "operationId": "dlp-risk-score-behaviors-put",
+        "summary": "Update configuration for risk behaviors",
+        "description": "Updates the configuration of one or more risk behaviors for an account. The server skips an\nunknown behavior, and a behavior that the account does not have the gates or entitlements for.\nThe response contains all behaviors for the account.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/risk-scoring_account_id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/risk-scoring_UpdateBehaviors"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Risk behaviors for the account after the update.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_BehaviorsResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Failed to update risk behaviors.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Zero Trust Risk Scoring"
+        ],
+        "x-api-token-group": [
+          "Zero Trust Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.risk-scoring.behaviours",
+        "x-fern-sdk-method-name": "update",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "zero-trust.risk-scoring.behaviours",
+        "x-forge-method-name": "update",
+        "x-forge-oauth-scopes": [
+          "teams.write"
+        ]
+      }
+    },
+    "/accounts/{account_id}/zt_risk_scoring/behaviors/high_dlp": {
+      "get": {
+        "operationId": "dlp-risk-score-behaviors-high-dlp-get",
+        "summary": "Get the high_dlp risk behavior",
+        "description": "Gets the high_dlp risk behavior and its DLP configuration. Returns 404 when the behavior is\ndisabled and the account does not have the gates or entitlements for it.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/risk-scoring_account_id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The high_dlp risk behavior.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_HighDlpBehaviorResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Failed to get the high_dlp risk behavior.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Zero Trust Risk Scoring"
+        ],
+        "x-api-token-group": [
+          "Zero Trust Read",
+          "Zero Trust Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.risk-scoring.behaviours.high-dlp",
+        "x-fern-sdk-method-name": "get",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "zero-trust.risk-scoring.behaviours.high-dlp",
+        "x-forge-method-name": "get",
+        "x-forge-oauth-scopes": [
+          "teams.read",
+          "teams.write"
+        ]
+      },
+      "put": {
+        "operationId": "dlp-risk-score-behaviors-high-dlp-put",
+        "summary": "Update the high_dlp risk behavior",
+        "description": "Updates the high_dlp risk behavior and its DLP configuration. Returns 404 when the account does\nnot have the gates or entitlements for the behavior.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/risk-scoring_account_id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/risk-scoring_UpdateHighDlpBehavior"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The high_dlp risk behavior after the update.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_HighDlpBehaviorResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Failed to update the high_dlp risk behavior.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Zero Trust Risk Scoring"
+        ],
+        "x-api-token-group": [
+          "Zero Trust Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.risk-scoring.behaviours.high-dlp",
+        "x-fern-sdk-method-name": "update",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "zero-trust.risk-scoring.behaviours.high-dlp",
+        "x-forge-method-name": "update",
+        "x-forge-oauth-scopes": [
+          "teams.write"
+        ]
+      }
+    },
+    "/accounts/{account_id}/zt_risk_scoring/behaviors/{behavior_id}": {
+      "get": {
+        "operationId": "dlp-risk-score-behavior-get",
+        "summary": "Get a risk behavior",
+        "description": "Gets one risk behavior that has no additional configuration. Returns 404 when the behavior is\ndisabled and the account does not have the gates or entitlements for it.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/risk-scoring_account_id"
+          },
+          {
+            "$ref": "#/components/parameters/risk-scoring_behavior_id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The risk behavior.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_BehaviorResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Failed to get the risk behavior.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Zero Trust Risk Scoring"
+        ],
+        "x-api-token-group": [
+          "Zero Trust Read",
+          "Zero Trust Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.risk-scoring.behaviours.single",
+        "x-fern-sdk-method-name": "get",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "zero-trust.risk-scoring.behaviours.single",
+        "x-forge-method-name": "get",
+        "x-forge-oauth-scopes": [
+          "teams.read",
+          "teams.write"
+        ]
+      },
+      "put": {
+        "operationId": "dlp-risk-score-behavior-put",
+        "summary": "Update a risk behavior",
+        "description": "Updates one risk behavior that has no additional configuration. Returns 404 when the account\ndoes not have the gates or entitlements for the behavior.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/risk-scoring_account_id"
+          },
+          {
+            "$ref": "#/components/parameters/risk-scoring_behavior_id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/risk-scoring_UpdateBehavior"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The risk behavior after the update.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_BehaviorResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Failed to update the risk behavior.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Zero Trust Risk Scoring"
+        ],
+        "x-api-token-group": [
+          "Zero Trust Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.risk-scoring.behaviours.single",
+        "x-fern-sdk-method-name": "update",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "zero-trust.risk-scoring.behaviours.single",
+        "x-forge-method-name": "update",
+        "x-forge-oauth-scopes": [
+          "teams.write"
+        ]
+      }
+    },
     "/accounts/{account_id}/zt_risk_scoring/integrations": {
       "get": {
         "operationId": "dlp-zt-risk-score-integration-list",
@@ -409514,6 +410344,344 @@
         "x-forge-oauth-scopes": [
           "teams.write"
         ]
+      }
+    },
+    "/accounts/{account_id}/zt_risk_scoring/summary": {
+      "get": {
+        "operationId": "dlp-risk-score-summary-get",
+        "summary": "Get risk score info for all users in the account",
+        "description": "Gets the users in an account that have risk events, with the highest risk level, the event\ncount, and the time of the last event for each user. The server reads risk events from at most\n180 days before the current time, and after the last reset of each user.\nReturns 404 when the request reaches a server outside of the configured region of the account.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/risk-scoring_account_id"
+          },
+          {
+            "$ref": "#/components/parameters/risk-scoring_page"
+          },
+          {
+            "$ref": "#/components/parameters/risk-scoring_per_page"
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "Field to sort the users by.",
+            "schema": {
+              "type": "string",
+              "default": "last_event",
+              "enum": [
+                "last_event",
+                "event_count",
+                "max_risk_level"
+              ]
+            }
+          },
+          {
+            "$ref": "#/components/parameters/risk-scoring_direction"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Risk score summary for the account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_RiskSummaryResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Failed to get the risk score summary.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Zero Trust Risk Scoring"
+        ],
+        "x-api-token-group": [
+          "Zero Trust: PII Read"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.risk-scoring.summary",
+        "x-fern-sdk-method-name": "get",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "zero-trust.risk-scoring.summary",
+        "x-forge-method-name": "get",
+        "x-forge-oauth-scopes": [
+          "teams-pii.read"
+        ]
+      }
+    },
+    "/accounts/{account_id}/zt_risk_scoring/{user_id}": {
+      "get": {
+        "operationId": "dlp-risk-score-summary-get-for-user",
+        "summary": "Get risk event/score information for a specific user",
+        "description": "Gets the risk level, the last reset time, and the risk events of one user. The server reads\nrisk events from at most 180 days before the current time, and after the last reset of the user.\nReturns 404 when the request reaches a server outside of the configured region of the account.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/risk-scoring_account_id"
+          },
+          {
+            "$ref": "#/components/parameters/risk-scoring_user_id"
+          },
+          {
+            "name": "timestamp.between",
+            "in": "query",
+            "description": "Time range as <start_seconds>:<end_seconds> in Unix epoch seconds. The start must be before\nthe end.\n",
+            "schema": {
+              "type": "string",
+              "example": "1790812800:1790899200"
+            }
+          },
+          {
+            "name": "time_zone",
+            "in": "query",
+            "description": "IANA time zone name. The server validates the value. The value does not change the response.",
+            "schema": {
+              "type": "string",
+              "example": "America/Chicago"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/risk-scoring_page"
+          },
+          {
+            "$ref": "#/components/parameters/risk-scoring_per_page"
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "Field to sort the events by.",
+            "schema": {
+              "type": "string",
+              "default": "timestamp",
+              "enum": [
+                "timestamp",
+                "risk_level"
+              ]
+            }
+          },
+          {
+            "$ref": "#/components/parameters/risk-scoring_direction"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Risk events for the user.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_RiskEventsResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Failed to get the risk events for the user.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Zero Trust Risk Scoring"
+        ],
+        "x-api-token-group": [
+          "Zero Trust: PII Read"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.risk-scoring",
+        "x-fern-sdk-method-name": "get",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "zero-trust.risk-scoring",
+        "x-forge-method-name": "get",
+        "x-forge-oauth-scopes": [
+          "teams-pii.read"
+        ]
+      }
+    },
+    "/accounts/{account_id}/zt_risk_scoring/{user_id}/event_clusters": {
+      "get": {
+        "operationId": "dlp-risk-score-event-clusters-list-for-user",
+        "summary": "List risk event clusters for a specific user",
+        "description": "Lists the risk events of one user, grouped by calendar day in the requested time zone. Each\ncluster contains at most 25 events, oldest first. The time range is at most 30 days. The server\nreads risk events from at most 180 days before the current time.\nReturns 404 when the request reaches a server outside of the configured region of the account.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/risk-scoring_account_id"
+          },
+          {
+            "$ref": "#/components/parameters/risk-scoring_user_id"
+          },
+          {
+            "name": "timestamp.between",
+            "in": "query",
+            "description": "Time range as <start_seconds>:<end_seconds> in Unix epoch seconds. The default is the last\n7 days. The server returns 400 when the range is longer than 30 days.\n",
+            "schema": {
+              "type": "string",
+              "example": "1789707600:1790312400"
+            }
+          },
+          {
+            "name": "time_zone",
+            "in": "query",
+            "description": "IANA time zone name that sets the calendar day of each cluster.",
+            "schema": {
+              "type": "string",
+              "example": "America/Chicago",
+              "default": "UTC"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/risk-scoring_page"
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Number of clusters per page. The server uses 10 for a larger value.",
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "maximum": 10,
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Risk event clusters for the user.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_RiskEventClustersResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Failed to get the risk event clusters for the user.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Zero Trust Risk Scoring"
+        ],
+        "x-api-token-group": [
+          "Zero Trust: PII Read"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.risk-scoring.event-clusters",
+        "x-fern-sdk-method-name": "list",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "zero-trust.risk-scoring.event-clusters",
+        "x-forge-method-name": "list",
+        "x-forge-oauth-scopes": [
+          "teams-pii.read"
+        ]
+      }
+    },
+    "/accounts/{account_id}/zt_risk_scoring/{user_id}/reset": {
+      "post": {
+        "operationId": "dlp-risk-score-reset-post",
+        "summary": "Clear the risk score for a particular user",
+        "description": "Resets the risk score of one user. Risk events before the reset do not count toward the score\nof the user.\n",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/risk-scoring_account_id"
+          },
+          {
+            "$ref": "#/components/parameters/risk-scoring_user_id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The risk score of the user is reset. The result is null.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_EmptyResponse"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Failed to reset the risk score of the user.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/risk-scoring_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "tags": [
+          "Zero Trust Risk Scoring"
+        ],
+        "x-api-token-group": [
+          "Zero Trust Write"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "zero-trust.risk-scoring",
+        "x-fern-sdk-method-name": "reset",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "zero-trust.risk-scoring",
+        "x-forge-method-name": "reset",
+        "x-forge-oauth-scopes": [
+          "teams.write"
+        ],
+        "x-forge-require-confirmation": "This operation wipes risk-scoring history."
       }
     },
     "/analytics/sql": {
@@ -554623,6 +555791,84 @@
         "x-forge-group-name": "user.subscriptions",
         "x-forge-method-name": "delete"
       },
+      "get": {
+        "operationId": "user-subscription-get-user-subscription",
+        "summary": "Get User Subscription",
+        "description": "Gets a user's subscription by identifier.",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/bill-subs_schemas-identifier"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get User Subscription response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bill-subs_account_subscription_response_single"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Subscription not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bill-subs_api-response-common-failure"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Get User Subscription response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/bill-subs_api-response-common-failure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_email": [],
+            "api_key": [],
+            "api_token": []
+          }
+        ],
+        "tags": [
+          "User Subscription"
+        ],
+        "x-api-token-group": [
+          "Billing Write",
+          "Billing Read"
+        ],
+        "x-cfPermissionsRequired": {
+          "enum": [
+            "#billing:read"
+          ]
+        },
+        "x-cfPlanAvailability": {
+          "business": true,
+          "enterprise": true,
+          "free": true,
+          "pro": true
+        },
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "user.subscriptions",
+        "x-fern-sdk-method-name": "get",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "user.subscriptions",
+        "x-forge-method-name": "get"
+      },
       "put": {
         "operationId": "user-subscription-update-user-subscription",
         "summary": "Update User Subscription",
@@ -617590,7 +618836,7 @@
       "get": {
         "operationId": "zone-subscription-zone-subscription-details",
         "summary": "Zone Subscription Details",
-        "description": "Lists zone subscription details.",
+        "description": "Lists zone subscription details. Zones on the Free plan normally have no zone subscription, so this returns 404 with error code 1207.",
         "parameters": [
           {
             "name": "zone_id",
@@ -617658,7 +618904,7 @@
       "post": {
         "operationId": "zone-subscription-create-zone-subscription",
         "summary": "Create Zone Subscription",
-        "description": "Create a zone subscription, either plan or add-ons.",
+        "description": "Create a zone subscription, either plan or add-ons. Requesting the `free` rate plan does not create a subscription.",
         "parameters": [
           {
             "name": "zone_id",
@@ -617736,7 +618982,7 @@
       "put": {
         "operationId": "zone-subscription-update-zone-subscription",
         "summary": "Update Zone Subscription",
-        "description": "Updates zone subscriptions, either plan or add-ons.",
+        "description": "Updates zone subscriptions, either plan or add-ons. Updating to the `free` rate plan downgrades the zone to the Free plan, after which the zone has no zone subscription.",
         "parameters": [
           {
             "name": "zone_id",
@@ -637506,7 +638752,7 @@
         "schema": {
           "description": "Opaque token for cursor pagination, obtained from `result_info.cursor` of the previous response. An empty value starts cursor pagination. Mutually exclusive with `page` and `prev_cursor`.\n",
           "type": "string",
-          "maxLength": 4096
+          "maxLength": 6144
         }
       },
       "dns-records_include_shadow_metadata": {
@@ -637577,7 +638823,7 @@
         "schema": {
           "description": "Opaque token for requesting the previous page in cursor pagination, obtained from `result_info.prev_cursor` of the previous response. Mutually exclusive with `page` and `cursor`.\n",
           "type": "string",
-          "maxLength": 4096,
+          "maxLength": 6144,
           "minLength": 1
         }
       },
@@ -639149,6 +640395,91 @@
           "$ref": "#/components/schemas/resource-tagging_resource_type"
         }
       },
+      "risk-scoring_account_id": {
+        "description": "Cloudflare account tag.",
+        "in": "path",
+        "name": "account_id",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "0ee7ea44703746e777422a5a11d797b9"
+        }
+      },
+      "risk-scoring_behavior_id": {
+        "description": "ID of a risk behavior that has no additional configuration.",
+        "in": "path",
+        "name": "behavior_id",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "imp_travel",
+          "enum": [
+            "imp_travel",
+            "malware",
+            "sentinel_one",
+            "crowdstrike_low",
+            "crowdstrike_med",
+            "suspicious_domain_visited",
+            "high_risk_domain_visited",
+            "unusual_access_login",
+            "new_domain_rotating_ips",
+            "beaconing",
+            "novel_mcp_usage",
+            "cloud_storage_upload_anomaly",
+            "new_access_app",
+            "new_access_device",
+            "new_access_country",
+            "new_access_location",
+            "unusual_access_day",
+            "unusual_access_hour"
+          ]
+        }
+      },
+      "risk-scoring_direction": {
+        "description": "Sort direction.",
+        "in": "query",
+        "name": "direction",
+        "schema": {
+          "type": "string",
+          "default": "desc",
+          "enum": [
+            "asc",
+            "desc"
+          ]
+        }
+      },
+      "risk-scoring_page": {
+        "description": "Page number, starting at 1.",
+        "in": "query",
+        "name": "page",
+        "schema": {
+          "type": "integer",
+          "default": 1,
+          "minimum": 1
+        }
+      },
+      "risk-scoring_per_page": {
+        "description": "Number of results per page. The server uses 100 for a larger value.",
+        "in": "query",
+        "name": "per_page",
+        "schema": {
+          "type": "integer",
+          "default": 25,
+          "maximum": 100,
+          "minimum": 1
+        }
+      },
+      "risk-scoring_user_id": {
+        "description": "User ID (UUID v4).",
+        "in": "path",
+        "name": "user_id",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uuid",
+          "example": "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+        }
+      },
       "rulesets_DryRun": {
         "description": "Validates the request without persisting changes when set to `true`. Responses that normally return 200 return `result: null`; endpoints that normally return 204 continue to return 204.",
         "in": "query",
@@ -639533,7 +640864,8 @@
         "name": "per_page",
         "schema": {
           "type": "integer",
-          "format": "uint64"
+          "format": "uint64",
+          "minimum": 1
         }
       },
       "teams-devices_devices_list_devices_param_search": {
@@ -639656,7 +640988,8 @@
         "name": "per_page",
         "schema": {
           "type": "integer",
-          "format": "uint64"
+          "format": "uint64",
+          "minimum": 1
         }
       },
       "teams-devices_devices_list_registrations_param_policy_id": {
@@ -641198,6 +642531,60 @@
               "x-auditable": true
             }
           },
+          "alert_trigger_preferences_long_window": {
+            "description": "Usage depends on specific alert type. Takes at most one value, a duration such as `4h`. custom_analytics requires it when alert_trigger_preferences is slo, zscore_spike, zscore_drop or zscore_spike_and_drop. There it must be at most 24h, and for the z-score types at least six times alert_trigger_preferences_short_window.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-auditable": true
+            },
+            "example": [
+              "4h"
+            ],
+            "maxItems": 1
+          },
+          "alert_trigger_preferences_minimum_threshold": {
+            "description": "Usage depends on specific alert type. Takes at most one value, a number as a string.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-auditable": true
+            },
+            "maxItems": 1
+          },
+          "alert_trigger_preferences_operator": {
+            "description": "Used for configuring custom_analytics, which requires it. Takes exactly one value, the operator that compares the result with alert_trigger_preferences_value. It must be `<` unless alert_trigger_preferences is threshold.",
+            "type": "array",
+            "items": {
+              "enum": [
+                "<",
+                ">",
+                "<=",
+                ">=",
+                "==",
+                "!="
+              ],
+              "type": "string",
+              "x-auditable": true
+            },
+            "example": [
+              ">"
+            ],
+            "maxItems": 1,
+            "minItems": 1
+          },
+          "alert_trigger_preferences_short_window": {
+            "description": "Usage depends on specific alert type. Takes at most one value, a duration such as `5m`. custom_analytics requires it, and it must be at least 1m there. queues_lag_alert requires it, at least 5m.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-auditable": true
+            },
+            "example": [
+              "5m"
+            ],
+            "maxItems": 1
+          },
           "alert_trigger_preferences_value": {
             "description": "Usage depends on specific alert type",
             "type": "array",
@@ -641261,6 +642648,19 @@
               "type": "string",
               "x-auditable": true
             }
+          },
+          "execution_interval": {
+            "description": "Used for configuring custom_analytics when source is sql_api. Other sources reject it. Takes at most one value, how often the query runs, as a duration in whole seconds such as `5m`. It can't be shorter than the minimum for the query, which is 1m, or 10m for Log Explorer datasets. If it's omitted, the API sets it to that minimum.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-auditable": true
+            },
+            "example": [
+              "5m"
+            ],
+            "maxItems": 1,
+            "x-stainless-terraform-configurability": "computed_optional"
           },
           "group_by": {
             "description": "Usage depends on specific alert type",
@@ -641449,6 +642849,23 @@
               "type": "string",
               "x-auditable": true
             }
+          },
+          "source": {
+            "description": "Used for configuring custom_analytics, which requires it. Takes exactly one value, the dataset the alert queries.",
+            "type": "array",
+            "items": {
+              "enum": [
+                "workers_analytics_engine",
+                "sql_api"
+              ],
+              "type": "string",
+              "x-auditable": true
+            },
+            "example": [
+              "sql_api"
+            ],
+            "maxItems": 1,
+            "minItems": 1
           },
           "status": {
             "description": "Used for configuring health_check_status_notification",
@@ -642336,7 +643753,8 @@
       "aaa_url": {
         "description": "The POST endpoint to call when dispatching a notification.",
         "type": "string",
-        "example": "https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd"
+        "example": "https://hooks.slack.com/services/Ds3fdBFbV/456464Gdd",
+        "x-auditable": false
       },
       "aaa_uuid": {
         "description": "UUID",
@@ -668085,7 +669503,7 @@
           "id": {
             "description": "The ID of the rate plan.",
             "type": "string",
-            "example": "free",
+            "example": "business",
             "x-auditable": true
           },
           "is_contract": {
@@ -687960,7 +689378,8 @@
           "cep_jwt": {
             "description": "A signed JWT token used to authenticate the preview request.",
             "type": "string",
-            "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ6b25lIjoiaHR0cHM6Ly9leGFtcGxlLmNvbS9lcnJvci5odG1sIiwiZW5kcG9pbnQiOiJibG9jazp3YWYiLCJleHAiOjE3MTYyMzkwMjJ9.example"
+            "example": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ6b25lIjoiaHR0cHM6Ly9leGFtcGxlLmNvbS9lcnJvci5odG1sIiwiZW5kcG9pbnQiOiJibG9jazp3YWYiLCJleHAiOjE3MTYyMzkwMjJ9.example",
+            "x-auditable": false
           }
         },
         "required": [
@@ -716808,6 +718227,7 @@
             "type": "string",
             "maxLength": 2048,
             "writeOnly": true,
+            "x-auditable": false,
             "x-forge-sensitive": true,
             "x-sensitive": true
           },
@@ -716851,7 +718271,10 @@
           "signature": {
             "description": "Hex-encoded signature authorizing the database creation.",
             "type": "string",
-            "example": "9f2b8c1d4e6a7b3c5d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c"
+            "example": "9f2b8c1d4e6a7b3c5d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c",
+            "x-auditable": false,
+            "x-forge-sensitive": true,
+            "x-sensitive": true
           },
           "timestamp": {
             "description": "Unix timestamp, in seconds, at which the signature was issued. The integration partner uses it to verify the signature and reject stale authorizations.",
@@ -717076,6 +718499,7 @@
             "type": "string",
             "example": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
             "writeOnly": true,
+            "x-auditable": false,
             "x-forge-sensitive": true,
             "x-sensitive": true
           },
@@ -742962,6 +744386,231 @@
         "maxLength": 32,
         "readOnly": true
       },
+      "networkquality_ErrorEnvelope": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "properties": {
+                "code": {
+                  "type": "number"
+                },
+                "message": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "code",
+                "message"
+              ],
+              "type": "object"
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [],
+            "maxItems": 0
+          },
+          "result": {
+            "type": "object",
+            "enum": [
+              null
+            ],
+            "nullable": true
+          },
+          "success": {
+            "type": "boolean",
+            "enum": [
+              false
+            ]
+          }
+        },
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ]
+      },
+      "networkquality_SettingsResult": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "example": true
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-01-01T00:00:00Z"
+          }
+        },
+        "required": [
+          "enabled"
+        ]
+      },
+      "networkquality_SettingsSuccess": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [],
+            "maxItems": 0
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [],
+            "maxItems": 0
+          },
+          "result": {
+            "$ref": "#/components/schemas/networkquality_SettingsResult"
+          },
+          "success": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ]
+      },
+      "networkquality_SettingsUpdate": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "example": true
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "enabled"
+        ]
+      },
+      "networkquality_TokenRequest": {
+        "type": "object",
+        "properties": {
+          "bytes": {
+            "description": "Customer-defined byte budget signed into the token for downstream enforcement and billing",
+            "type": "integer",
+            "example": 1000000000,
+            "exclusiveMinimum": true,
+            "maximum": 34359738368,
+            "minimum": 0
+          },
+          "eyeball_id": {
+            "type": "string",
+            "example": "eyeball-7f3a",
+            "pattern": "^[A-Za-z0-9_.:-]{8,128}$"
+          },
+          "source_ips": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "format": "ipv4",
+                  "type": "string"
+                },
+                {
+                  "format": "ipv6",
+                  "type": "string"
+                },
+                {
+                  "format": "ipv4-cidr",
+                  "type": "string"
+                },
+                {
+                  "format": "ipv6-cidr",
+                  "type": "string"
+                }
+              ],
+              "description": "An IPv4 or IPv6 address or CIDR, excluding unspecified addresses and catch-all CIDRs."
+            },
+            "example": [
+              "203.0.113.42",
+              "2001:db8::/32"
+            ],
+            "default": [],
+            "maxItems": 8
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "bytes",
+          "eyeball_id"
+        ]
+      },
+      "networkquality_TokenResult": {
+        "type": "object",
+        "properties": {
+          "token": {
+            "type": "string",
+            "example": "eyJhbGciOiJFUzI1NiIsInR5cCI6ImNmc3BlZWQrand0Iiwia2lkIjoiMDAwMDAwMDAtMDAwMC00MDAwLTgwMDAtMDAwMDAwMDAwMDAwIn0.eyJzdWIiOiIwMDAwMDAwMC0wMDAwLTQwMDAtODAwMC0wMDAwMDAwMDAwMDAiLCJleWViYWxsX2lkIjoiZXllYmFsbC03ZjNhIiwic291cmNlX2lwcyI6WyIyMDMuMC4xMTMuNDIiLCIyMDAxOmRiODo6LzMyIl0sImlzcyI6InVybjpjbG91ZGZsYXJlOmNmc3BlZWQtYXBpOnN0YWdpbmciLCJhdWQiOiJ1cm46Y2xvdWRmbGFyZTpzcGVlZHRlc3Q6c3RhZ2luZyIsImp0aSI6IjAwMDAwMDAwLTAwMDAtNDAwMC04MDAwLTAwMDAwMDAwMDAwMCIsImlhdCI6MTc2NzIyNTYwMCwiZXhwIjoxNzY3MjI2MjAwLCJieXRlcyI6MTAwMDAwMDAwMH0.AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+            "x-forge-sensitive": true,
+            "x-sensitive": true
+          }
+        },
+        "required": [
+          "token"
+        ]
+      },
+      "networkquality_TokenSuccess": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [],
+            "maxItems": 0
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "example": [],
+            "maxItems": 0
+          },
+          "result": {
+            "$ref": "#/components/schemas/networkquality_TokenResult"
+          },
+          "success": {
+            "type": "boolean",
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ]
+      },
       "nsc_AccountTag": {
         "description": "Customer account tag",
         "type": "string"
@@ -760236,6 +761885,7 @@
           "stream_key": {
             "description": "Unique key for accessing each livestream. Empty if the livestream is disabled.",
             "type": "string",
+            "x-auditable": false,
             "x-forge-sensitive": true,
             "x-sensitive": true
           },
@@ -760422,7 +762072,8 @@
           "password": {
             "description": "Password for SIP digest authentication. Keep it secret.",
             "type": "string",
-            "readOnly": true
+            "readOnly": true,
+            "x-auditable": false
           },
           "sip_uri": {
             "description": "SIP URI to dial. Configure it in your SIP provider or PBX.",
@@ -762017,8 +763668,13 @@
             "description": "Access key of the storage medium. Access key is not required for the `gcs` storage media type.\n\nNote that this field is not readable by clients, only writeable.",
             "type": "string",
             "writeOnly": true,
+            "x-auditable": false,
             "x-forge-sensitive": true,
             "x-sensitive": true
+          },
+          "account_id": {
+            "description": "Cloudflare account ID, a 32-character hexadecimal string. Required for `cloudflare` storage.",
+            "type": "string"
           },
           "auth_method": {
             "description": "Authentication method used for \"sftp\" type storage medium\n",
@@ -762040,6 +763696,7 @@
             "description": "SSH destination server password for SFTP type storage medium when auth_method is \"PASSWORD\". If auth_method is \"KEY\", this specifies the password for the ssh private key.",
             "type": "string",
             "writeOnly": true,
+            "x-auditable": false,
             "x-forge-sensitive": true,
             "x-sensitive": true
           },
@@ -762055,6 +763712,7 @@
             "description": "Private key used to login to destination SSH server for SFTP type storage medium, when auth_method used is \"KEY\"",
             "type": "string",
             "writeOnly": true,
+            "x-auditable": false,
             "x-forge-sensitive": true,
             "x-sensitive": true
           },
@@ -762067,6 +763725,7 @@
             "description": "Secret key of the storage medium. Required for `aws` storage. Similar to `access_key`, it is only writeable by clients, not readable.",
             "type": "string",
             "writeOnly": true,
+            "x-auditable": false,
             "x-forge-sensitive": true,
             "x-sensitive": true
           },
@@ -762078,7 +763737,8 @@
               "azure",
               "digitalocean",
               "gcs",
-              "sftp"
+              "sftp",
+              "cloudflare"
             ]
           },
           "username": {
@@ -762188,6 +763848,21 @@
               "host",
               "port"
             ]
+          },
+          {
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "cloudflare"
+                ]
+              }
+            },
+            "required": [
+              "access_key",
+              "account_id"
+            ],
+            "type": "object"
           }
         ],
         "required": [
@@ -772726,6 +774401,717 @@
         ],
         "x-auditable": true
       },
+      "risk-scoring_Behavior": {
+        "description": "A risk behavior and its configuration.",
+        "type": "object",
+        "properties": {
+          "description": {
+            "description": "Explains what the behavior detects.",
+            "type": "string",
+            "example": "A user signed in from two locations that are too far apart for the time between them."
+          },
+          "enabled": {
+            "description": "Whether the behavior counts toward the risk score.",
+            "type": "boolean",
+            "example": true
+          },
+          "name": {
+            "description": "Display name of the behavior.",
+            "type": "string",
+            "example": "Impossible travel"
+          },
+          "points": {
+            "$ref": "#/components/schemas/risk-scoring_Points"
+          },
+          "risk_level": {
+            "$ref": "#/components/schemas/risk-scoring_RiskLevel"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "risk_level",
+          "points",
+          "enabled"
+        ]
+      },
+      "risk-scoring_BehaviorResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/risk-scoring_api-response-single"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/risk-scoring_Behavior"
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "risk-scoring_Behaviors": {
+        "description": "Risk behaviors, keyed by behavior ID.",
+        "type": "object",
+        "properties": {
+          "behaviors": {
+            "description": "Risk behaviors, keyed by behavior ID.",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/risk-scoring_Behavior"
+            }
+          }
+        },
+        "required": [
+          "behaviors"
+        ]
+      },
+      "risk-scoring_BehaviorsResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/risk-scoring_api-response-single"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/risk-scoring_Behaviors"
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "risk-scoring_DlpBehaviorConfig": {
+        "description": "DLP configuration of the high_dlp behavior.",
+        "type": "object",
+        "properties": {
+          "duration_secs": {
+            "description": "Rolling window in seconds, from 60 to 172800.",
+            "type": "integer",
+            "format": "int64",
+            "example": 3600,
+            "maximum": 172800,
+            "minimum": 60
+          },
+          "hits": {
+            "description": "Number of DLP policy matches that triggers the behavior.",
+            "type": "integer",
+            "format": "int64",
+            "example": 15,
+            "minimum": 1
+          }
+        },
+        "required": [
+          "hits",
+          "duration_secs"
+        ]
+      },
+      "risk-scoring_Empty": {
+        "description": "Empty result.",
+        "type": "object",
+        "nullable": true
+      },
+      "risk-scoring_EmptyResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/risk-scoring_api-response-single"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/risk-scoring_Empty"
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "risk-scoring_HighDlpBehavior": {
+        "description": "The high_dlp risk behavior and its DLP configuration.",
+        "type": "object",
+        "properties": {
+          "config": {
+            "$ref": "#/components/schemas/risk-scoring_DlpBehaviorConfig"
+          },
+          "description": {
+            "description": "Explains what the behavior detects.",
+            "type": "string"
+          },
+          "enabled": {
+            "description": "Whether the behavior counts toward the risk score.",
+            "type": "boolean"
+          },
+          "name": {
+            "description": "Display name of the behavior.",
+            "type": "string",
+            "example": "High number of DLP policies triggered"
+          },
+          "points": {
+            "$ref": "#/components/schemas/risk-scoring_Points"
+          },
+          "risk_level": {
+            "$ref": "#/components/schemas/risk-scoring_RiskLevel"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "risk_level",
+          "points",
+          "enabled",
+          "config"
+        ]
+      },
+      "risk-scoring_HighDlpBehaviorResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/risk-scoring_api-response-single"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/risk-scoring_HighDlpBehavior"
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "risk-scoring_MaxRiskLevel": {
+        "description": "Highest risk level. The value is unset when no event maps to a configured behavior.",
+        "type": "string",
+        "enum": [
+          "unset",
+          "info",
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "risk-scoring_Points": {
+        "description": "Risk score points of a behavior.",
+        "type": "integer",
+        "example": 85,
+        "maximum": 100,
+        "minimum": 1
+      },
+      "risk-scoring_ResultInfo": {
+        "description": "Pagination information. The server always returns every field.",
+        "type": "object",
+        "properties": {
+          "count": {
+            "description": "Number of results on this page.",
+            "type": "integer",
+            "example": 25
+          },
+          "page": {
+            "description": "Current page within the paginated list of results.",
+            "type": "integer",
+            "example": 1
+          },
+          "per_page": {
+            "description": "Number of results per page.",
+            "type": "integer",
+            "example": 25
+          },
+          "total_count": {
+            "description": "Total number of results that match the request.",
+            "type": "integer",
+            "example": 2000
+          }
+        },
+        "required": [
+          "page",
+          "per_page",
+          "count",
+          "total_count"
+        ]
+      },
+      "risk-scoring_RiskEvent": {
+        "description": "One risk event of a user.",
+        "type": "object",
+        "properties": {
+          "event_details": {
+            "description": "Details of the event. The fields depend on the behavior. The server omits the field when the details are not valid JSON.",
+            "type": "object",
+            "additionalProperties": true
+          },
+          "id": {
+            "description": "ID of the behavior that caused the event.",
+            "type": "string",
+            "example": "high_dlp"
+          },
+          "name": {
+            "description": "Name of the behavior that caused the event.",
+            "type": "string",
+            "example": "High number of DLP policies triggered"
+          },
+          "points": {
+            "$ref": "#/components/schemas/risk-scoring_Points"
+          },
+          "risk_level": {
+            "$ref": "#/components/schemas/risk-scoring_RiskLevel"
+          },
+          "timestamp": {
+            "description": "Time of the event.",
+            "type": "string",
+            "format": "date-time",
+            "example": "2026-04-08T13:48:01Z"
+          }
+        },
+        "required": [
+          "id",
+          "risk_level",
+          "points",
+          "name",
+          "timestamp"
+        ]
+      },
+      "risk-scoring_RiskEventCluster": {
+        "description": "The risk events of one user on one calendar day.",
+        "type": "object",
+        "properties": {
+          "end_time": {
+            "description": "End of the calendar day of the cluster, in the requested time zone.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "event_count": {
+            "description": "Number of events in the cluster.",
+            "type": "integer",
+            "minimum": 0
+          },
+          "events": {
+            "description": "At most 25 events of the cluster, oldest first.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/risk-scoring_RiskEvent"
+            }
+          },
+          "first_event_time": {
+            "description": "Time of the first event in the cluster.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "highest_risk_level": {
+            "$ref": "#/components/schemas/risk-scoring_MaxRiskLevel"
+          },
+          "last_event_time": {
+            "description": "Time of the last event in the cluster.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "points": {
+            "description": "Sum of the points of all events in the cluster.",
+            "type": "integer",
+            "minimum": 0
+          },
+          "start_time": {
+            "description": "Start of the calendar day of the cluster, in the requested time zone.",
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "start_time",
+          "end_time",
+          "event_count",
+          "points",
+          "first_event_time",
+          "last_event_time",
+          "highest_risk_level",
+          "events"
+        ]
+      },
+      "risk-scoring_RiskEventClusters": {
+        "description": "Risk level, last reset time, and daily risk event clusters of one user.",
+        "type": "object",
+        "properties": {
+          "clusters": {
+            "description": "Daily risk event clusters on this page.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/risk-scoring_RiskEventCluster"
+            }
+          },
+          "email": {
+            "description": "Email address of the user.",
+            "type": "string",
+            "example": "alice@example.com"
+          },
+          "last_reset_time": {
+            "description": "Time of the last risk score reset of the user. The value is null when the score was never reset.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "name": {
+            "description": "Name of the user.",
+            "type": "string",
+            "example": "Alice Johnson"
+          },
+          "range_event_count": {
+            "description": "Number of events in the requested time range.",
+            "type": "integer",
+            "minimum": 0
+          },
+          "risk_level": {
+            "$ref": "#/components/schemas/risk-scoring_RiskLevel"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "last_reset_time",
+          "range_event_count",
+          "clusters"
+        ]
+      },
+      "risk-scoring_RiskEventClustersResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/risk-scoring_api-response-single"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/risk-scoring_RiskEventClusters"
+              },
+              "result_info": {
+                "$ref": "#/components/schemas/risk-scoring_ResultInfo"
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "risk-scoring_RiskEvents": {
+        "description": "Risk level, last reset time, and risk events of one user.",
+        "type": "object",
+        "properties": {
+          "email": {
+            "description": "Email address of the user.",
+            "type": "string",
+            "example": "jdoe@example.com"
+          },
+          "events": {
+            "description": "Risk events of the user on this page.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/risk-scoring_RiskEvent"
+            }
+          },
+          "last_reset_time": {
+            "description": "Time of the last risk score reset of the user. The value is null when the score was never reset.",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "name": {
+            "description": "Name of the user.",
+            "type": "string",
+            "example": "John Doe"
+          },
+          "risk_level": {
+            "$ref": "#/components/schemas/risk-scoring_RiskLevel"
+          }
+        },
+        "required": [
+          "name",
+          "email",
+          "last_reset_time",
+          "events"
+        ]
+      },
+      "risk-scoring_RiskEventsResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/risk-scoring_api-response-single"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/risk-scoring_RiskEvents"
+              },
+              "result_info": {
+                "$ref": "#/components/schemas/risk-scoring_ResultInfo"
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "risk-scoring_RiskLevel": {
+        "description": "Risk level of a behavior or an event.",
+        "type": "string",
+        "enum": [
+          "info",
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "risk-scoring_RiskSummary": {
+        "description": "Risk summary of the users in an account.",
+        "type": "object",
+        "properties": {
+          "users": {
+            "description": "Users on this page, with their risk summary.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/risk-scoring_UserRiskInfo"
+            }
+          }
+        },
+        "required": [
+          "users"
+        ]
+      },
+      "risk-scoring_RiskSummaryResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/risk-scoring_api-response-single"
+          },
+          {
+            "properties": {
+              "result": {
+                "$ref": "#/components/schemas/risk-scoring_RiskSummary"
+              },
+              "result_info": {
+                "$ref": "#/components/schemas/risk-scoring_ResultInfo"
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "risk-scoring_UpdateBehavior": {
+        "description": "Settings for one risk behavior. Supply risk_level, points, or both. When you supply both,\npoints must be in the range of risk_level. When you supply only one, the server derives the\nother.\n",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "description": "Whether the behavior counts toward the risk score.",
+            "type": "boolean",
+            "example": true
+          },
+          "points": {
+            "description": "Risk score points of the behavior. A null value is the same as an omitted value.",
+            "type": "integer",
+            "example": 50,
+            "maximum": 100,
+            "minimum": 1,
+            "nullable": true
+          },
+          "risk_level": {
+            "$ref": "#/components/schemas/risk-scoring_RiskLevel"
+          }
+        },
+        "required": [
+          "enabled"
+        ]
+      },
+      "risk-scoring_UpdateBehaviors": {
+        "description": "Settings for one or more risk behaviors, keyed by behavior ID.",
+        "type": "object",
+        "properties": {
+          "behaviors": {
+            "description": "Settings for each behavior to update, keyed by behavior ID.",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/risk-scoring_UpdateBehavior"
+            }
+          }
+        },
+        "required": [
+          "behaviors"
+        ]
+      },
+      "risk-scoring_UpdateHighDlpBehavior": {
+        "description": "Settings for the high_dlp risk behavior. Supply risk_level, points, or both. When you supply\nboth, points must be in the range of risk_level. An omitted or null config keeps the stored\nconfiguration.\n",
+        "type": "object",
+        "properties": {
+          "config": {
+            "description": "DLP configuration of the behavior. A null value is the same as an omitted value.",
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/risk-scoring_DlpBehaviorConfig"
+              }
+            ],
+            "nullable": true,
+            "x-fern-property-name": "dlp-config",
+            "x-forge-property-name": "dlp-config"
+          },
+          "enabled": {
+            "description": "Whether the behavior counts toward the risk score.",
+            "type": "boolean"
+          },
+          "points": {
+            "description": "Risk score points of the behavior. A null value is the same as an omitted value.",
+            "type": "integer",
+            "maximum": 100,
+            "minimum": 1,
+            "nullable": true
+          },
+          "risk_level": {
+            "$ref": "#/components/schemas/risk-scoring_RiskLevel"
+          }
+        },
+        "required": [
+          "enabled"
+        ]
+      },
+      "risk-scoring_UserRiskInfo": {
+        "description": "Risk summary of one user.",
+        "type": "object",
+        "properties": {
+          "email": {
+            "description": "Email address of the user.",
+            "type": "string"
+          },
+          "event_count": {
+            "description": "Number of risk events of the user.",
+            "type": "integer",
+            "minimum": 0
+          },
+          "last_event": {
+            "description": "Time of the most recent risk event of the user.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "max_risk_level": {
+            "$ref": "#/components/schemas/risk-scoring_MaxRiskLevel"
+          },
+          "name": {
+            "description": "Name of the user.",
+            "type": "string"
+          },
+          "user_id": {
+            "description": "User ID (UUID v4).",
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "required": [
+          "user_id",
+          "name",
+          "email",
+          "max_risk_level",
+          "event_count",
+          "last_event"
+        ]
+      },
+      "risk-scoring_api-response-common": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "$ref": "#/components/schemas/risk-scoring_messages"
+          },
+          "messages": {
+            "$ref": "#/components/schemas/risk-scoring_messages"
+          },
+          "success": {
+            "description": "Whether the API call was successful.",
+            "type": "boolean",
+            "example": true,
+            "enum": [
+              true
+            ]
+          }
+        },
+        "required": [
+          "success",
+          "errors",
+          "messages"
+        ]
+      },
+      "risk-scoring_api-response-common-failure": {
+        "type": "object",
+        "properties": {
+          "errors": {
+            "example": [
+              {
+                "code": 7003,
+                "message": "No route for the URI"
+              }
+            ],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/risk-scoring_messages"
+              }
+            ],
+            "minLength": 1
+          },
+          "messages": {
+            "example": [],
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/risk-scoring_messages"
+              }
+            ]
+          },
+          "result": {
+            "type": "object",
+            "enum": [
+              null
+            ],
+            "nullable": true
+          },
+          "success": {
+            "description": "Whether the API call was successful.",
+            "type": "boolean",
+            "example": false,
+            "enum": [
+              false
+            ]
+          }
+        },
+        "required": [
+          "success",
+          "errors",
+          "messages",
+          "result"
+        ]
+      },
+      "risk-scoring_api-response-single": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/risk-scoring_api-response-common"
+          }
+        ]
+      },
+      "risk-scoring_messages": {
+        "type": "array",
+        "items": {
+          "properties": {
+            "code": {
+              "type": "integer",
+              "minimum": 1000
+            },
+            "documentation_url": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "source": {
+              "type": "object",
+              "properties": {
+                "pointer": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "type": "object",
+          "uniqueItems": true
+        },
+        "example": []
+      },
       "rlanalytics_api-response-common-failure": {
         "type": "object",
         "properties": {
@@ -777772,6 +780158,7 @@
         "description": "TSIG secret.",
         "type": "string",
         "example": "caf79a7804b04337c9c66ccd7bef9190a1e1679b5dd03d8aa10f7ad45e1a9dab92b417896c15d4d007c7c14194538d2a5d0feffdecc5a7f0e1c570cfa700837c",
+        "x-auditable": false,
         "x-forge-sensitive": true,
         "x-sensitive": true
       },
@@ -783103,7 +785490,7 @@
             "type": "string",
             "format": "uri",
             "example": "https://www.examplestorage.com/audio_file.mp3",
-            "x-auditable": true
+            "x-auditable": false
           }
         },
         "required": [
@@ -784623,7 +787010,8 @@
             "description": "A video's URL. Preferred over 'url'.",
             "type": "string",
             "format": "uri",
-            "example": "https://example.com/myvideo.mp4"
+            "example": "https://example.com/myvideo.mp4",
+            "x-auditable": false
           },
           "meta": {
             "$ref": "#/components/schemas/stream_media_metadata"
@@ -784649,7 +787037,8 @@
             "description": "A video's URL (legacy field, use 'input' instead).",
             "type": "string",
             "format": "uri",
-            "example": "https://example.com/myvideo.mp4"
+            "example": "https://example.com/myvideo.mp4",
+            "x-auditable": false
           },
           "watermark": {
             "$ref": "#/components/schemas/stream_watermark_at_upload"
@@ -784678,7 +787067,8 @@
             "description": "A video's URL. The server must be publicly routable and support `HTTP HEAD` requests and `HTTP GET` range requests. The server should respond to `HTTP HEAD` requests with a `content-range` header that includes the size of the file. This is the preferred field over `url`.",
             "type": "string",
             "format": "uri",
-            "example": "https://example.com/myvideo.mp4"
+            "example": "https://example.com/myvideo.mp4",
+            "x-auditable": false
           },
           "meta": {
             "$ref": "#/components/schemas/stream_media_metadata"
@@ -784701,7 +787091,8 @@
             "description": "A video's URL. The server must be publicly routable and support `HTTP HEAD` requests and `HTTP GET` range requests. The server should respond to `HTTP HEAD` requests with a `content-range` header that includes the size of the file. This field is deprecated in favor of `input`.",
             "type": "string",
             "format": "uri",
-            "example": "https://example.com/myvideo.mp4"
+            "example": "https://example.com/myvideo.mp4",
+            "x-auditable": false
           },
           "watermark": {
             "$ref": "#/components/schemas/stream_watermark_at_upload"
@@ -791053,6 +793444,7 @@
             "description": "The key for a custom uploaded certificate.",
             "type": "string",
             "example": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/SCB5...\n-----END PRIVATE KEY-----\n",
+            "x-auditable": false,
             "x-forge-sensitive": true,
             "x-sensitive": true
           }
@@ -792807,6 +795199,7 @@
         "description": "The zone's private key. Not required if custom_csr_id is provided, in which case the private key is retrieved from the CSR record held by Cloudflare.",
         "type": "string",
         "example": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAwQHoetcl9+5ikGzV6cMzWtWPJHqXT3wpbEkRU9Yz7lgvddmG\ndtcGbg/1CGZu0jJGkMoppoUo4c3dts3iwqRYmBikUP77wwY2QGmDZw2FvkJCJlKn\nabIRuGvBKwzESIXgKk2016aTP6/dAjEHyo6SeoK8lkIySUvK0fyOVlsiEsCmOpid\ntnKX/a+50GjB79CJH4ER2lLVZnhePFR/zUOyPxZQQ4naHf7yu/b5jhO0f8fwt+py\nFxIXjbEIdZliWRkRMtzrHOJIhrmJ2A1J7iOrirbbwillwjjNVUWPf3IJ3M12S9pE\newooaeO2izNTERcG9HzAacbVRn2Y2SWIyT/18QIDAQABAoIBACbhTYXBZYKmYPCb\nHBR1IBlCQA2nLGf0qRuJNJZg5iEzXows/6tc8YymZkQE7nolapWsQ+upk2y5Xdp/\naxiuprIs9JzkYK8Ox0r+dlwCG1kSW+UAbX0bQ/qUqlsTvU6muVuMP8vZYHxJ3wmb\n+ufRBKztPTQ/rYWaYQcgC0RWI20HTFBMxlTAyNxYNWzX7RKFkGVVyB9RsAtmcc8g\n+j4OdosbfNoJPS0HeIfNpAznDfHKdxDk2Yc1tV6RHBrC1ynyLE9+TaflIAdo2MVv\nKLMLq51GqYKtgJFIlBRPQqKoyXdz3fGvXrTkf/WY9QNq0J1Vk5ERePZ54mN8iZB7\n9lwy/AkCgYEA6FXzosxswaJ2wQLeoYc7ceaweX/SwTvxHgXzRyJIIT0eJWgx13Wo\n/WA3Iziimsjf6qE+SI/8laxPp2A86VMaIt3Z3mJN/CqSVGw8LK2AQst+OwdPyDMu\niacE8lj/IFGC8mwNUAb9CzGU3JpU4PxxGFjS/eMtGeRXCWkK4NE+G08CgYEA1Kp9\nN2JrVlqUz+gAX+LPmE9OEMAS9WQSQsfCHGogIFDGGcNf7+uwBM7GAaSJIP01zcoe\nVAgWdzXCv3FLhsaZoJ6RyLOLay5phbu1iaTr4UNYm5WtYTzMzqh8l1+MFFDl9xDB\nvULuCIIrglM5MeS/qnSg1uMoH2oVPj9TVst/ir8CgYEAxrI7Ws9Zc4Bt70N1As+U\nlySjaEVZCMkqvHJ6TCuVZFfQoE0r0whdLdRLU2PsLFP+q7qaeZQqgBaNSKeVcDYR\n9B+nY/jOmQoPewPVsp/vQTCnE/R81spu0mp0YI6cIheT1Z9zAy322svcc43JaWB7\nmEbeqyLOP4Z4qSOcmghZBSECgYACvR9Xs0DGn+wCsW4vze/2ei77MD4OQvepPIFX\ndFZtlBy5ADcgE9z0cuVB6CiL8DbdK5kwY9pGNr8HUCI03iHkW6Zs+0L0YmihfEVe\nPG19PSzK9CaDdhD9KFZSbLyVFmWfxOt50H7YRTTiPMgjyFpfi5j2q348yVT0tEQS\nfhRqaQKBgAcWPokmJ7EbYQGeMbS7HC8eWO/RyamlnSffdCdSc7ue3zdVJxpAkQ8W\nqu80pEIF6raIQfAf8MXiiZ7auFOSnHQTXUbhCpvDLKi0Mwq3G8Pl07l+2s6dQG6T\nlv6XTQaMyf6n1yjzL+fzDrH3qXMxHMO/b13EePXpDMpY7HQpoLDi\n-----END RSA PRIVATE KEY-----\n",
+        "x-auditable": false,
         "x-forge-sensitive": true,
         "x-sensitive": true
       },
@@ -792814,6 +795207,7 @@
         "description": "The zone's private key.",
         "type": "string",
         "example": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAwQHoetcl9+5ikGzV6cMzWtWPJHqXT3wpbEkRU9Yz7lgvddmG\ndtcGbg/1CGZu0jJGkMoppoUo4c3dts3iwqRYmBikUP77wwY2QGmDZw2FvkJCJlKn\nabIRuGvBKwzESIXgKk2016aTP6/dAjEHyo6SeoK8lkIySUvK0fyOVlsiEsCmOpid\ntnKX/a+50GjB79CJH4ER2lLVZnhePFR/zUOyPxZQQ4naHf7yu/b5jhO0f8fwt+py\nFxIXjbEIdZliWRkRMtzrHOJIhrmJ2A1J7iOrirbbwillwjjNVUWPf3IJ3M12S9pE\newooaeO2izNTERcG9HzAacbVRn2Y2SWIyT/18QIDAQABAoIBACbhTYXBZYKmYPCb\nHBR1IBlCQA2nLGf0qRuJNJZg5iEzXows/6tc8YymZkQE7nolapWsQ+upk2y5Xdp/\naxiuprIs9JzkYK8Ox0r+dlwCG1kSW+UAbX0bQ/qUqlsTvU6muVuMP8vZYHxJ3wmb\n+ufRBKztPTQ/rYWaYQcgC0RWI20HTFBMxlTAyNxYNWzX7RKFkGVVyB9RsAtmcc8g\n+j4OdosbfNoJPS0HeIfNpAznDfHKdxDk2Yc1tV6RHBrC1ynyLE9+TaflIAdo2MVv\nKLMLq51GqYKtgJFIlBRPQqKoyXdz3fGvXrTkf/WY9QNq0J1Vk5ERePZ54mN8iZB7\n9lwy/AkCgYEA6FXzosxswaJ2wQLeoYc7ceaweX/SwTvxHgXzRyJIIT0eJWgx13Wo\n/WA3Iziimsjf6qE+SI/8laxPp2A86VMaIt3Z3mJN/CqSVGw8LK2AQst+OwdPyDMu\niacE8lj/IFGC8mwNUAb9CzGU3JpU4PxxGFjS/eMtGeRXCWkK4NE+G08CgYEA1Kp9\nN2JrVlqUz+gAX+LPmE9OEMAS9WQSQsfCHGogIFDGGcNf7+uwBM7GAaSJIP01zcoe\nVAgWdzXCv3FLhsaZoJ6RyLOLay5phbu1iaTr4UNYm5WtYTzMzqh8l1+MFFDl9xDB\nvULuCIIrglM5MeS/qnSg1uMoH2oVPj9TVst/ir8CgYEAxrI7Ws9Zc4Bt70N1As+U\nlySjaEVZCMkqvHJ6TCuVZFfQoE0r0whdLdRLU2PsLFP+q7qaeZQqgBaNSKeVcDYR\n9B+nY/jOmQoPewPVsp/vQTCnE/R81spu0mp0YI6cIheT1Z9zAy322svcc43JaWB7\nmEbeqyLOP4Z4qSOcmghZBSECgYACvR9Xs0DGn+wCsW4vze/2ei77MD4OQvepPIFX\ndFZtlBy5ADcgE9z0cuVB6CiL8DbdK5kwY9pGNr8HUCI03iHkW6Zs+0L0YmihfEVe\nPG19PSzK9CaDdhD9KFZSbLyVFmWfxOt50H7YRTTiPMgjyFpfi5j2q348yVT0tEQS\nfhRqaQKBgAcWPokmJ7EbYQGeMbS7HC8eWO/RyamlnSffdCdSc7ue3zdVJxpAkQ8W\nqu80pEIF6raIQfAf8MXiiZ7auFOSnHQTXUbhCpvDLKi0Mwq3G8Pl07l+2s6dQG6T\nlv6XTQaMyf6n1yjzL+fzDrH3qXMxHMO/b13EePXpDMpY7HQpoLDi\n-----END RSA PRIVATE KEY-----\n",
+        "x-auditable": false,
         "x-forge-sensitive": true,
         "x-sensitive": true
       },
@@ -792821,6 +795215,7 @@
         "description": "The hostname certificate's private key.",
         "type": "string",
         "example": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAwQHoetcl9+5ikGzV6cMzWtWPJHqXT3wpbEkRU9Yz7lgvddmG\ndtcGbg/1CGZu0jJGkMoppoUo4c3dts3iwqRYmBikUP77wwY2QGmDZw2FvkJCJlKn\nabIRuGvBKwzESIXgKk2016aTP6/dAjEHyo6SeoK8lkIySUvK0fyOVlsiEsCmOpid\ntnKX/a+50GjB79CJH4ER2lLVZnhePFR/zUOyPxZQQ4naHf7yu/b5jhO0f8fwt+py\nFxIXjbEIdZliWRkRMtzrHOJIhrmJ2A1J7iOrirbbwillwjjNVUWPf3IJ3M12S9pE\newooaeO2izNTERcG9HzAacbVRn2Y2SWIyT/18QIDAQABAoIBACbhTYXBZYKmYPCb\nHBR1IBlCQA2nLGf0qRuJNJZg5iEzXows/6tc8YymZkQE7nolapWsQ+upk2y5Xdp/\naxiuprIs9JzkYK8Ox0r+dlwCG1kSW+UAbX0bQ/qUqlsTvU6muVuMP8vZYHxJ3wmb\n+ufRBKztPTQ/rYWaYQcgC0RWI20HTFBMxlTAyNxYNWzX7RKFkGVVyB9RsAtmcc8g\n+j4OdosbfNoJPS0HeIfNpAznDfHKdxDk2Yc1tV6RHBrC1ynyLE9+TaflIAdo2MVv\nKLMLq51GqYKtgJFIlBRPQqKoyXdz3fGvXrTkf/WY9QNq0J1Vk5ERePZ54mN8iZB7\n9lwy/AkCgYEA6FXzosxswaJ2wQLeoYc7ceaweX/SwTvxHgXzRyJIIT0eJWgx13Wo\n/WA3Iziimsjf6qE+SI/8laxPp2A86VMaIt3Z3mJN/CqSVGw8LK2AQst+OwdPyDMu\niacE8lj/IFGC8mwNUAb9CzGU3JpU4PxxGFjS/eMtGeRXCWkK4NE+G08CgYEA1Kp9\nN2JrVlqUz+gAX+LPmE9OEMAS9WQSQsfCHGogIFDGGcNf7+uwBM7GAaSJIP01zcoe\nVAgWdzXCv3FLhsaZoJ6RyLOLay5phbu1iaTr4UNYm5WtYTzMzqh8l1+MFFDl9xDB\nvULuCIIrglM5MeS/qnSg1uMoH2oVPj9TVst/ir8CgYEAxrI7Ws9Zc4Bt70N1As+U\nlySjaEVZCMkqvHJ6TCuVZFfQoE0r0whdLdRLU2PsLFP+q7qaeZQqgBaNSKeVcDYR\n9B+nY/jOmQoPewPVsp/vQTCnE/R81spu0mp0YI6cIheT1Z9zAy322svcc43JaWB7\nmEbeqyLOP4Z4qSOcmghZBSECgYACvR9Xs0DGn+wCsW4vze/2ei77MD4OQvepPIFX\ndFZtlBy5ADcgE9z0cuVB6CiL8DbdK5kwY9pGNr8HUCI03iHkW6Zs+0L0YmihfEVe\nPG19PSzK9CaDdhD9KFZSbLyVFmWfxOt50H7YRTTiPMgjyFpfi5j2q348yVT0tEQS\nfhRqaQKBgAcWPokmJ7EbYQGeMbS7HC8eWO/RyamlnSffdCdSc7ue3zdVJxpAkQ8W\nqu80pEIF6raIQfAf8MXiiZ7auFOSnHQTXUbhCpvDLKi0Mwq3G8Pl07l+2s6dQG6T\nlv6XTQaMyf6n1yjzL+fzDrH3qXMxHMO/b13EePXpDMpY7HQpoLDi\n-----END RSA PRIVATE KEY-----\n",
+        "x-auditable": false,
         "x-forge-sensitive": true,
         "x-sensitive": true
       },
@@ -792828,6 +795223,7 @@
         "description": "The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust's block page.",
         "type": "string",
         "example": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDEXDkcICRU3XBv\n9hiiPnBWIjgTQyowmVFxDr11mONgZB/cMYjE/OvQjvnpwNcOaSK16MOpAjNbELKR\nx2lZiVJaLRDCccqCxXwP/CrdRChcqGzo7mbNksMlcidrErb0LlEBKLFC2QjRmRKq\nB+YOs4TD8WsZu2S667A2fZmjRlaqOxFi1h62ee0P+TLU628UC/nl41JifSt5Evt7\nhMDHakemdwZblNYr2p6T3NQjdhjYXTtP4UmOGJBhJ7i7Kicg3d3CIgdTMbggSeGW\nqjndr4ldVnD96FN3cVT5uDFsn2CJXTFgdeBWoUnMS4VnUZzPWGf4vSBXC8qV7Ls+\nw46yT7T1AgMBAAECggEAQZnp/oqCeNPOR6l5S2L+1tfx0gWjZ78hJVteUpZ0iHSK\n7F6kKeOxyOird7vUXV0kmo+cJq+0hp0Ke4eam640FCpwKfYoSQ4/R3vgujGWJnai\nhCN5tv5sMet0XeJPuz5qE7ALoKCvwI6aXLHs20aAeZIDTQJ9QbGSGnJVzOWn+JDT\nidIgZpN57RpXfSAwnJPTQK/PN8i5z108hsaDOdEgGmxYZ7kYqMqzX20KXmth58LD\nfPixs5JGtS60iiKC/wOcGzkB2/AdTSojR76oEU77cANP/3zO25NG//whUdYlW0t0\nd7PgXxIeJe+xgYnamDQJx3qonVyt4H77ha0ObRAj9QKBgQDicZr+VTwFMnELP3a+\nFXGnjehRiuS1i7MXGKxNweCD+dFlML0FplSQS8Ro2n+d8lu8BBXGx0qm6VXu8Rhn\n7TAUL6q+PCgfarzxfIhacb/TZCqfieIHsMlVBfhV5HCXnk+kis0tuC/PRArcWTwD\nHJUJXkBhvkUsNswvQzavDPI7KwKBgQDd/WgLkj7A3X5fgIHZH/GbDSBiXwzKb+rF\n4ZCT2XFgG/OAW7vapfcX/w+v+5lBLyrocmOAS3PGGAhM5T3HLnUCQfnK4qgps1Lq\nibkc9Tmnsn60LanUjuUMsYv/zSw70tozbzhJ0pioEpWfRxRZBztO2Rr8Ntm7h6Fk\n701EXGNAXwKBgQCD1xsjy2J3sCerIdcz0u5qXLAPkeuZW+34m4/ucdwTWwc0gEz9\nlhsULFj9p4G351zLuiEnq+7mAWLcDJlmIO3mQt6JhiLiL9Y0T4pgBmxmWqKKYtAs\nJB0EmMY+1BNN44mBRqMxZFTJu1cLdhT/xstrOeoIPqytknYNanfTMZlzIwKBgHrL\nXe5oq0XMP8dcMneEcAUwsaU4pr6kQd3L9EmUkl5zl7J9C+DaxWAEuwzBw/iGutlx\nzRB+rD/7szu14wJ29EqXbDGKRzMp+se5/yfBjm7xEZ1hVPw7PwBShfqt57X/4Ktq\n7lwHnmH6RcGhc+P7WBc5iO/S94YAdIp8xOT3pf9JAoGAE0QkqJUY+5Mgr+fBO0VN\nV72ZoPveGpW+De59uhKAOnu1zljQCUtk59m6+DXfm0tNYKtawa5n8iN71Zh+s62x\nXSt3pYi1Y5CCCmv8Y4BhwIcPwXKk3zEvLgSHVTpC0bayA9aSO4bbZgVXa5w+Z0w/\nvvfp9DWo1IS3EnQRrz6WMYA=\n-----END PRIVATE KEY-----",
+        "x-auditable": false,
         "x-forge-sensitive": true,
         "x-sensitive": true
       },
@@ -793298,6 +795694,7 @@
                 "description": "The key for a custom uploaded certificate.",
                 "type": "string",
                 "example": "-----BEGIN RSA PRIVATE KEY-----\nMIIEowIBAAKCAQEAwQHoetcl9+5ikGzV6cMzWtWPJHqXT3wpbEkRU9Yz7lgvddmG\ndtcGbg/1CGZu0jJGkMoppoUo4c3dts3iwqRYmBikUP77wwY2QGmDZw2FvkJCJlKn\nabIRuGvBKwzESIXgKk2016aTP6/dAjEHyo6SeoK8lkIySUvK0fyOVlsiEsCmOpid\ntnKX/a+50GjB79CJH4ER2lLVZnhePFR/zUOyPxZQQ4naHf7yu/b5jhO0f8fwt+py\nFxIXjbEIdZliWRkRMtzrHOJIhrmJ2A1J7iOrirbbwillwjjNVUWPf3IJ3M12S9pE\newooaeO2izNTERcG9HzAacbVRn2Y2SWIyT/18QIDAQABAoIBACbhTYXBZYKmYPCb\nHBR1IBlCQA2nLGf0qRuJNJZg5iEzXows/6tc8YymZkQE7nolapWsQ+upk2y5Xdp/\naxiuprIs9JzkYK8Ox0r+dlwCG1kSW+UAbX0bQ/qUqlsTvU6muVuMP8vZYHxJ3wmb\n+ufRBKztPTQ/rYWaYQcgC0RWI20HTFBMxlTAyNxYNWzX7RKFkGVVyB9RsAtmcc8g\n+j4OdosbfNoJPS0HeIfNpAznDfHKdxDk2Yc1tV6RHBrC1ynyLE9+TaflIAdo2MVv\nKLMLq51GqYKtgJFIlBRPQqKoyXdz3fGvXrTkf/WY9QNq0J1Vk5ERePZ54mN8iZB7\n9lwy/AkCgYEA6FXzosxswaJ2wQLeoYc7ceaweX/SwTvxHgXzRyJIIT0eJWgx13Wo\n/WA3Iziimsjf6qE+SI/8laxPp2A86VMaIt3Z3mJN/CqSVGw8LK2AQst+OwdPyDMu\niacE8lj/IFGC8mwNUAb9CzGU3JpU4PxxGFjS/eMtGeRXCWkK4NE+G08CgYEA1Kp9\nN2JrVlqUz+gAX+LPmE9OEMAS9WQSQsfCHGogIFDGGcNf7+uwBM7GAaSJIP01zcoe\nVAgWdzXCv3FLhsaZoJ6RyLOLay5phbu1iaTr4UNYm5WtYTzMzqh8l1+MFFDl9xDB\nvULuCIIrglM5MeS/qnSg1uMoH2oVPj9TVst/ir8CgYEAxrI7Ws9Zc4Bt70N1As+U\nlySjaEVZCMkqvHJ6TCuVZFfQoE0r0whdLdRLU2PsLFP+q7qaeZQqgBaNSKeVcDYR\n9B+nY/jOmQoPewPVsp/vQTCnE/R81spu0mp0YI6cIheT1Z9zAy322svcc43JaWB7\nmEbeqyLOP4Z4qSOcmghZBSECgYACvR9Xs0DGn+wCsW4vze/2ei77MD4OQvepPIFX\ndFZtlBy5ADcgE9z0cuVB6CiL8DbdK5kwY9pGNr8HUCI03iHkW6Zs+0L0YmihfEVe\nPG19PSzK9CaDdhD9KFZSbLyVFmWfxOt50H7YRTTiPMgjyFpfi5j2q348yVT0tEQS\nfhRqaQKBgAcWPokmJ7EbYQGeMbS7HC8eWO/RyamlnSffdCdSc7ue3zdVJxpAkQ8W\nqu80pEIF6raIQfAf8MXiiZ7auFOSnHQTXUbhCpvDLKi0Mwq3G8Pl07l+2s6dQG6T\nlv6XTQaMyf6n1yjzL+fzDrH3qXMxHMO/b13EePXpDMpY7HQpoLDi\n-----END RSA PRIVATE KEY-----\n",
+                "x-auditable": false,
                 "x-forge-sensitive": true,
                 "x-sensitive": true
               },
@@ -794606,6 +797003,102 @@
         "type": "string",
         "example": "example%20comment"
       },
+      "tunnel_hostname_record": {
+        "type": "object",
+        "properties": {
+          "canonical": {
+            "$ref": "#/components/schemas/tunnel_hostname_record_canonical"
+          },
+          "created_at": {
+            "$ref": "#/components/schemas/tunnel_created_at"
+          },
+          "hostname": {
+            "$ref": "#/components/schemas/tunnel_hostname_record_value"
+          },
+          "id": {
+            "$ref": "#/components/schemas/tunnel_hostname_record_id"
+          },
+          "tunnel_id": {
+            "$ref": "#/components/schemas/tunnel_tunnel_id-2"
+          }
+        },
+        "required": [
+          "id",
+          "tunnel_id",
+          "hostname",
+          "canonical",
+          "created_at"
+        ]
+      },
+      "tunnel_hostname_record_canonical": {
+        "description": "Whether this is the canonical hostname for the tunnel.",
+        "type": "boolean",
+        "example": true,
+        "x-auditable": true
+      },
+      "tunnel_hostname_record_id": {
+        "description": "UUID of the tunnel hostname.",
+        "type": "string",
+        "format": "uuid",
+        "example": "6b9e2c54-7b1a-4d2d-91ac-53ec83f8b6c8",
+        "x-auditable": true
+      },
+      "tunnel_hostname_record_response_collection": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/tunnel_api-response-common"
+          },
+          {
+            "properties": {
+              "result": {
+                "description": "Tunnel hostnames on the requested page.",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/tunnel_hostname_record"
+                }
+              },
+              "result_info": {
+                "description": "Pagination metadata for the requested page of tunnel hostnames.",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/tunnel_result_info"
+                  }
+                ]
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "tunnel_hostname_record_response_single": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/tunnel_api-response-common"
+          },
+          {
+            "properties": {
+              "result": {
+                "description": "The tunnel hostname created, retrieved, updated, or deleted by the operation.",
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/tunnel_hostname_record"
+                  }
+                ]
+              }
+            },
+            "type": "object"
+          }
+        ]
+      },
+      "tunnel_hostname_record_value": {
+        "description": "A single DNS label assigned to the tunnel. The value is normalized to lowercase and may contain only letters, digits, and internal hyphens.",
+        "type": "string",
+        "example": "branch-office-1",
+        "maxLength": 63,
+        "minLength": 1,
+        "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?$",
+        "x-auditable": true
+      },
       "tunnel_hostname_route": {
         "type": "object",
         "properties": {
@@ -795099,7 +797592,7 @@
         "default": 1,
         "minimum": 1
       },
-      "tunnel_patch_tunnel_hostname_body": {
+      "tunnel_patch_hostname_record_body": {
         "type": "object",
         "properties": {
           "canonical": {
@@ -795110,7 +797603,7 @@
             ]
           },
           "hostname": {
-            "$ref": "#/components/schemas/tunnel_tunnel_hostname_value"
+            "$ref": "#/components/schemas/tunnel_hostname_record_value"
           }
         }
       },
@@ -795120,7 +797613,7 @@
         "maximum": 1000,
         "minimum": 1
       },
-      "tunnel_post_tunnel_hostname_body": {
+      "tunnel_post_hostname_record_body": {
         "type": "object",
         "properties": {
           "canonical": {
@@ -795128,7 +797621,7 @@
             "type": "boolean"
           },
           "hostname": {
-            "$ref": "#/components/schemas/tunnel_tunnel_hostname_value"
+            "$ref": "#/components/schemas/tunnel_hostname_record_value"
           }
         },
         "required": [
@@ -795672,102 +798165,6 @@
             "type": "object"
           }
         ]
-      },
-      "tunnel_tunnel_hostname": {
-        "type": "object",
-        "properties": {
-          "canonical": {
-            "$ref": "#/components/schemas/tunnel_tunnel_hostname_canonical"
-          },
-          "created_at": {
-            "$ref": "#/components/schemas/tunnel_created_at"
-          },
-          "hostname": {
-            "$ref": "#/components/schemas/tunnel_tunnel_hostname_value"
-          },
-          "id": {
-            "$ref": "#/components/schemas/tunnel_tunnel_hostname_id"
-          },
-          "tunnel_id": {
-            "$ref": "#/components/schemas/tunnel_tunnel_id-2"
-          }
-        },
-        "required": [
-          "id",
-          "tunnel_id",
-          "hostname",
-          "canonical",
-          "created_at"
-        ]
-      },
-      "tunnel_tunnel_hostname_canonical": {
-        "description": "Whether this is the canonical hostname for the tunnel.",
-        "type": "boolean",
-        "example": true,
-        "x-auditable": true
-      },
-      "tunnel_tunnel_hostname_id": {
-        "description": "UUID of the tunnel hostname.",
-        "type": "string",
-        "format": "uuid",
-        "example": "6b9e2c54-7b1a-4d2d-91ac-53ec83f8b6c8",
-        "x-auditable": true
-      },
-      "tunnel_tunnel_hostname_response_collection": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/tunnel_api-response-common"
-          },
-          {
-            "properties": {
-              "result": {
-                "description": "Tunnel hostnames on the requested page.",
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/tunnel_tunnel_hostname"
-                }
-              },
-              "result_info": {
-                "description": "Pagination metadata for the requested page of tunnel hostnames.",
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/tunnel_result_info"
-                  }
-                ]
-              }
-            },
-            "type": "object"
-          }
-        ]
-      },
-      "tunnel_tunnel_hostname_response_single": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/tunnel_api-response-common"
-          },
-          {
-            "properties": {
-              "result": {
-                "description": "The tunnel hostname created, retrieved, updated, or deleted by the operation.",
-                "allOf": [
-                  {
-                    "$ref": "#/components/schemas/tunnel_tunnel_hostname"
-                  }
-                ]
-              }
-            },
-            "type": "object"
-          }
-        ]
-      },
-      "tunnel_tunnel_hostname_value": {
-        "description": "A single DNS label assigned to the tunnel. The value is normalized to lowercase and may contain only letters, digits, and internal hyphens.",
-        "type": "string",
-        "example": "branch-office-1",
-        "maxLength": 63,
-        "minLength": 1,
-        "pattern": "^[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?$",
-        "x-auditable": true
       },
       "tunnel_tunnel_id": {
         "description": "UUID of the tunnel.",
@@ -796365,6 +798762,7 @@
         "description": "Secret key for this widget.",
         "type": "string",
         "example": "0x4AAF00AAAABn0R22HWm098HVBjhdsYUc",
+        "x-auditable": false,
         "x-forge-sensitive": true,
         "x-sensitive": true,
         "x-stainless-terraform-use-state-for-unknown": true
@@ -825658,6 +828056,7 @@
                 "token": {
                   "description": "The participant authentication token to revoke.",
                   "type": "string",
+                  "x-auditable": false,
                   "x-forge-sensitive": true,
                   "x-sensitive": true
                 }
@@ -828666,6 +831065,7 @@
                             "token": {
                               "description": "The participant's auth token that can be used for joining a meeting from the client side.",
                               "type": "string",
+                              "x-auditable": false,
                               "x-forge-sensitive": true,
                               "x-sensitive": true
                             }
@@ -829636,6 +832036,7 @@
                         "token": {
                           "description": "Regenerated participant's authentication token.",
                           "type": "string",
+                          "x-auditable": false,
                           "x-forge-sensitive": true,
                           "x-sensitive": true
                         }
@@ -829674,6 +832075,7 @@
                         "token": {
                           "description": "The revoked participant authentication token.",
                           "type": "string",
+                          "x-auditable": false,
                           "x-forge-sensitive": true,
                           "x-sensitive": true
                         }
@@ -832077,11 +834479,29 @@
         "dlp.validators.worker.status": {
           "description": "Data Loss Prevention - retrieve Worker validator status"
         },
+        "risk-scoring": {
+          "description": "User Risk Scoring - retrieve and reset user risk scores"
+        },
+        "risk-scoring.behaviours": {
+          "description": "User Risk Scoring - manage behaviors used to calculate user risk scores"
+        },
+        "risk-scoring.behaviours.high-dlp": {
+          "description": "User Risk Scoring - manage the High Number of DLP Policies Triggered behavior"
+        },
+        "risk-scoring.behaviours.single": {
+          "description": "User Risk Scoring - manage one behavior that has no additional configuration"
+        },
+        "risk-scoring.event-clusters": {
+          "description": "User Risk Scoring - list daily clusters of user risk events"
+        },
         "risk-scoring.integrations": {
           "description": "User Risk Scoring - manage integrations that provide risk score signals"
         },
         "risk-scoring.integrations.references": {
           "description": "User Risk Scoring - retrieve integrations by external reference"
+        },
+        "risk-scoring.summary": {
+          "description": "User Risk Scoring - retrieve account risk score summaries"
         }
       }
     },
