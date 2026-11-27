@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Field for type matcher.</summary>
+        /// <summary>Field for type matcher. Required for `literal` matchers, and must be `to`.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ToField? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private global::Soenneker.Cloudflare.OpenApiClient.Models.ToField? _explicitNullValueField = default!;
         /// <summary>Type of matcher.</summary>

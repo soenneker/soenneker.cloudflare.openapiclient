@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Routing rule status.</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
-        /// <summary>Matching patterns to forward to your actions.</summary>
+        /// <summary>Matching patterns to forward to your actions. Creating or updating a rule requires exactly one matcher.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailRuleMatcher>? Matchers { get => _explicitNullValueMatchers; set { _explicitNullValueMatchers = value; AdditionalData?.Remove("matchers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matchers"); else _explicitNullProperties?.Remove("matchers"); } }

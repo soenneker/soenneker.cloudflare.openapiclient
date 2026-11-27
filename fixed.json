@@ -220811,6 +220811,252 @@
         ]
       }
     },
+    "/accounts/{accountId}/settings/transformations/workers/{scriptName}": {
+      "delete": {
+        "tags": [
+          "Account Settings"
+        ],
+        "summary": "Delete Image Transformations setting for a Worker",
+        "description": "Removes the Worker\u0027s \u0060/cdn-cgi/image/\u0060 URL transformations setting, so the zone-level\nImage Transformations settings apply again.\n",
+        "operationId": "AccountSettingsDeleteWorkerTransformations",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "maxLength": 32,
+              "type": "string",
+              "description": "Identifier.",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353",
+              "x-auditable": true
+            }
+          },
+          {
+            "name": "scriptName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-z0-9_][a-z0-9-_]{0,255}$",
+              "type": "string",
+              "description": "Name of the Worker script.",
+              "example": "my-worker",
+              "x-auditable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Delete Image Transformations setting for a Worker response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountSettingsDeleteWorkerTransformations200Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Delete Image Transformations setting for a Worker response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpeedApiResponseCommonFailure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "accounts.transformations.workers",
+        "x-fern-sdk-method-name": "delete",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "accounts.transformations.workers",
+        "x-forge-method-name": "delete",
+        "x-forge-require-confirmation": "This removes the Worker\u0027s Image Transformations setting, so the zone-level settings apply again."
+      },
+      "get": {
+        "tags": [
+          "Account Settings"
+        ],
+        "summary": "Get Image Transformations setting for a Worker",
+        "description": "Returns the \u0060/cdn-cgi/image/\u0060 URL transformations setting for requests served by a Worker.\nThe result is \u0060null\u0060 when the Worker has no setting of its own, in which case the zone-level\nImage Transformations settings apply.\n",
+        "operationId": "AccountSettingsGetWorkerTransformations",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "maxLength": 32,
+              "type": "string",
+              "description": "Identifier.",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353",
+              "x-auditable": true
+            }
+          },
+          {
+            "name": "scriptName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-z0-9_][a-z0-9-_]{0,255}$",
+              "type": "string",
+              "description": "Name of the Worker script.",
+              "example": "my-worker",
+              "x-auditable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get Image Transformations setting for a Worker response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountSettingsGetWorkerTransformations200Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Get Image Transformations setting for a Worker response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpeedApiResponseCommonFailure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "x-api-token-group": [
+          "Workers Metadata Read-Only",
+          "Workers Editor",
+          "Workers Content Read-Only",
+          "Workers Admin",
+          "Zone Settings Write",
+          "Zone Settings Read",
+          "Workers Routes Write",
+          "Workers Routes Read"
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "accounts.transformations.workers",
+        "x-fern-sdk-method-name": "get",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "accounts.transformations.workers",
+        "x-forge-method-name": "get",
+        "x-forge-oauth-scopes": [
+          "workers-routes.read",
+          "zone-settings.read",
+          "workers-scripts.content_read",
+          "workers-scripts.metadata_read",
+          "workers-routes.write",
+          "workers-scripts.edit",
+          "workers-scripts.admin",
+          "zone-settings.write"
+        ]
+      },
+      "put": {
+        "tags": [
+          "Account Settings"
+        ],
+        "summary": "Set Image Transformations setting for a Worker",
+        "description": "Sets the \u0060/cdn-cgi/image/\u0060 URL transformations setting for requests served by a Worker.\nThis overrides the zone-level Image Transformations and Allowed Origins settings for\nrequests handled by the Worker.\n",
+        "operationId": "AccountSettingsUpdateWorkerTransformations",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "maxLength": 32,
+              "type": "string",
+              "description": "Identifier.",
+              "example": "023e105f4ecef8ad9ca31a8372d0c353",
+              "x-auditable": true
+            }
+          },
+          {
+            "name": "scriptName",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-z0-9_][a-z0-9-_]{0,255}$",
+              "type": "string",
+              "description": "Name of the Worker script.",
+              "example": "my-worker",
+              "x-auditable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SpeedWorkerTransformations"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Set Image Transformations setting for a Worker response.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountSettingsUpdateWorkerTransformations200Response"
+                }
+              }
+            }
+          },
+          "4XX": {
+            "description": "Set Image Transformations setting for a Worker response failure.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SpeedApiResponseCommonFailure"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_token": []
+          },
+          {
+            "api_email": [],
+            "api_key": []
+          }
+        ],
+        "x-fern-availability": "generally-available",
+        "x-fern-sdk-group-name": "accounts.transformations.workers",
+        "x-fern-sdk-method-name": "update",
+        "x-forge-availability": "generally-available",
+        "x-forge-group-name": "accounts.transformations.workers",
+        "x-forge-method-name": "update"
+      }
+    },
     "/accounts/{accountId}/settings/ut-billing": {
       "get": {
         "tags": [
@@ -349158,7 +349404,7 @@
           "DNS Records for a Zone"
         ],
         "summary": "Import DNS Records",
-        "description": "You can upload your [BIND config](https://en.wikipedia.org/wiki/Zone_file \u0022Zone file\u0022) through this endpoint. It assumes that cURL is called from a location with bind_config.txt (valid BIND config) present.\n\nSee [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ \u0022Import and export records\u0022) for more information.",
+        "description": "You can upload your [BIND config](https://en.wikipedia.org/wiki/Zone_file \u0022Zone file\u0022) through this endpoint. It assumes that cURL is called from a location with bind_config.txt (valid BIND config) present.\n\nEach import accepts zone files up to 32 MiB and parses at most the zone or account record quota plus a small buffer for skipped records, including records expanded by \u0060$GENERATE\u0060 directives, which may expand to at most 1,000,000 records in total. Up to 1,000 warning or error messages are returned per import, followed by a warning with the number of messages left out, if any.\n\nSee [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ \u0022Import and export records\u0022) for more information.\n",
         "operationId": "DnsRecordsForAZoneImportDnsRecords",
         "parameters": [
           {
@@ -465296,7 +465542,7 @@
             "items": {
               "$ref": "#/components/schemas/EmailRuleMatcher"
             },
-            "description": "Matching patterns to forward to your actions."
+            "description": "Matching patterns to forward to your actions. Creating or updating a rule requires exactly one matcher."
           },
           "name": {
             "maxLength": 256,
@@ -465538,7 +465784,7 @@
             "items": {
               "$ref": "#/components/schemas/EmailRuleMatcher"
             },
-            "description": "Matching patterns to forward to your actions."
+            "description": "Matching patterns to forward to your actions. Creating or updating a rule requires exactly one matcher."
           },
           "owner_worker_name": {
             "type": "string",
@@ -465710,7 +465956,7 @@
             "items": {
               "$ref": "#/components/schemas/EmailRuleMatcher"
             },
-            "description": "Matching patterns to forward to your actions."
+            "description": "Matching patterns to forward to your actions. Creating or updating a rule requires exactly one matcher."
           }
         }
       },
@@ -465996,7 +466242,7 @@
             "items": {
               "$ref": "#/components/schemas/EmailRuleMatcher"
             },
-            "description": "Matching patterns to forward to your actions."
+            "description": "Matching patterns to forward to your actions. Creating or updating a rule requires exactly one matcher."
           },
           "name": {
             "maxLength": 256,
@@ -466459,7 +466705,7 @@
             "items": {
               "$ref": "#/components/schemas/EmailRuleMatcher"
             },
-            "description": "Matching patterns to forward to your actions."
+            "description": "Matching patterns to forward to your actions. Creating or updating a rule requires exactly one matcher."
           },
           "name": {
             "maxLength": 256,
@@ -467061,7 +467307,7 @@
             "items": {
               "$ref": "#/components/schemas/EmailRuleMatcher"
             },
-            "description": "Matching patterns to forward to your actions."
+            "description": "Matching patterns to forward to your actions. Creating or updating a rule requires exactly one matcher."
           },
           "name": {
             "maxLength": 256,
@@ -522658,6 +522904,74 @@
             }
           ]
         }
+      },
+      "SpeedWorkerTransformations": {
+        "title": "Worker Image Transformations setting",
+        "required": [
+          "enabled"
+        ],
+        "type": "object",
+        "properties": {
+          "allowed_origins": {
+            "maxItems": 10,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-auditable": true
+            },
+            "description": "Origins that source images may be fetched from, without a protocol, e.g. \u0060images.example.com\u0060,\n\u0060*.example.com\u0060 or \u0060images.example.com/uploads/\u0060. When set, only these origins are allowed, so\ninclude the Worker\u0027s own hostname if it serves the images. Omit to allow only images from the\nzone of the request. Use \u0060[\u0022*\u0022]\u0060 to allow any origin. Ignored when \u0060enabled\u0060 is \u0060false\u0060.\n",
+            "example": [
+              "images.example.com"
+            ]
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether URL transformations are enabled for the Worker. Set to \u0060false\u0060 to disable them,\noverriding the zone-level setting.\n",
+            "example": true,
+            "x-auditable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Controls \u0060/cdn-cgi/image/\u0060 URL transformations for requests served by a Worker."
+      },
+      "SpeedWorkerTransformationsResult": {
+        "title": "Worker Image Transformations setting",
+        "required": [
+          "id",
+          "enabled"
+        ],
+        "type": "object",
+        "properties": {
+          "allowed_origins": {
+            "maxItems": 10,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "x-auditable": true
+            },
+            "description": "Origins that source images may be fetched from, without a protocol, e.g. \u0060images.example.com\u0060,\n\u0060*.example.com\u0060 or \u0060images.example.com/uploads/\u0060. When set, only these origins are allowed, so\ninclude the Worker\u0027s own hostname if it serves the images. Omit to allow only images from the\nzone of the request. Use \u0060[\u0022*\u0022]\u0060 to allow any origin. Ignored when \u0060enabled\u0060 is \u0060false\u0060.\n",
+            "example": [
+              "images.example.com"
+            ]
+          },
+          "enabled": {
+            "type": "boolean",
+            "description": "Whether URL transformations are enabled for the Worker. Set to \u0060false\u0060 to disable them,\noverriding the zone-level setting.\n",
+            "example": true,
+            "x-auditable": true
+          },
+          "id": {
+            "type": "string",
+            "description": "Name of the Worker script the setting applies to.",
+            "readOnly": true,
+            "example": "my-worker",
+            "x-auditable": true
+          }
+        },
+        "description": "The Worker\u0027s setting, or \u0060null\u0060 when the zone-level settings apply.",
+        "nullable": true
       },
       "SpeedZoneConfigItem": {
         "title": "Zone configuration item",
@@ -668179,6 +668493,105 @@
             "items": {
               "$ref": "#/components/schemas/SpeedZoneConfigItem"
             }
+          }
+        }
+      },
+      "AccountSettingsDeleteWorkerTransformations200Response": {
+        "required": [
+          "success",
+          "errors",
+          "messages"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpeedMessagesItem"
+            },
+            "example": []
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpeedMessagesItem"
+            },
+            "example": []
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Whether the API call was successful.",
+            "example": true,
+            "x-auditable": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/AccountSettingsDeleteWorkerTransformations200ResponseResult"
+          }
+        }
+      },
+      "AccountSettingsGetWorkerTransformations200Response": {
+        "required": [
+          "success",
+          "errors",
+          "messages"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpeedMessagesItem"
+            },
+            "example": []
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpeedMessagesItem"
+            },
+            "example": []
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Whether the API call was successful.",
+            "example": true,
+            "x-auditable": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/SpeedWorkerTransformationsResult"
+          }
+        }
+      },
+      "AccountSettingsUpdateWorkerTransformations200Response": {
+        "required": [
+          "success",
+          "errors",
+          "messages"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpeedMessagesItem"
+            },
+            "example": []
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpeedMessagesItem"
+            },
+            "example": []
+          },
+          "success": {
+            "type": "boolean",
+            "description": "Whether the API call was successful.",
+            "example": true,
+            "x-auditable": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/SpeedWorkerTransformationsResult"
           }
         }
       },
@@ -832301,6 +832714,11 @@
       "GetSecurityCenterInsightContext200ResponseResult": {
         "type": "object"
       },
+      "AccountSettingsDeleteWorkerTransformations200ResponseResult": {
+        "type": "object",
+        "description": "Always \u0060null\u0060, as the zone-level settings now apply.",
+        "nullable": true
+      },
       "SharesList4XxResponseResult": {
         "type": "object",
         "nullable": true
@@ -945169,7 +945587,7 @@
           "to"
         ],
         "type": "string",
-        "description": "Field for type matcher.",
+        "description": "Field for type matcher. Required for \u0060literal\u0060 matchers, and must be \u0060to\u0060.",
         "example": "to",
         "x-auditable": true,
         "x-ms-enum": {
@@ -1213649,7 +1214067,7 @@
       "items": {
         "$ref": "#/components/schemas/EmailRuleMatcher"
       },
-      "description": "Matching patterns to forward to your actions."
+      "description": "Matching patterns to forward to your actions. Creating or updating a rule requires exactly one matcher."
     },
     "EmailRuleName": {
       "maxLength": 256,
@@ -1213701,7 +1214119,7 @@
           "items": {
             "$ref": "#/components/schemas/EmailRuleMatcher"
           },
-          "description": "Matching patterns to forward to your actions."
+          "description": "Matching patterns to forward to your actions. Creating or updating a rule requires exactly one matcher."
         },
         "name": {
           "maxLength": 256,
@@ -1230970,6 +1231388,37 @@
       "type": "string",
       "description": "Comma-separated list of allowed origin domains for image and video transformations.\nUse \u0022*\u0022 to allow all origins (default).\n",
       "example": "example.com,cdn.example.com",
+      "x-auditable": true
+    },
+    "SpeedWorkerScriptName": {
+      "pattern": "^[a-z0-9_][a-z0-9-_]{0,255}$",
+      "type": "string",
+      "description": "Name of the Worker script.",
+      "example": "my-worker",
+      "x-auditable": true
+    },
+    "SpeedWorkerTransformationsAllowedOrigins": {
+      "maxItems": 10,
+      "minItems": 1,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "x-auditable": true
+      },
+      "description": "Origins that source images may be fetched from, without a protocol, e.g. \u0060images.example.com\u0060,\n\u0060*.example.com\u0060 or \u0060images.example.com/uploads/\u0060. When set, only these origins are allowed, so\ninclude the Worker\u0027s own hostname if it serves the images. Omit to allow only images from the\nzone of the request. Use \u0060[\u0022*\u0022]\u0060 to allow any origin. Ignored when \u0060enabled\u0060 is \u0060false\u0060.\n",
+      "example": [
+        "images.example.com"
+      ]
+    },
+    "SpeedWorkerTransformationsDeleted": {
+      "type": "object",
+      "description": "Always \u0060null\u0060, as the zone-level settings now apply.",
+      "nullable": true
+    },
+    "SpeedWorkerTransformationsEnabled": {
+      "type": "boolean",
+      "description": "Whether URL transformations are enabled for the Worker. Set to \u0060false\u0060 to disable them,\noverriding the zone-level setting.\n",
+      "example": true,
       "x-auditable": true
     },
     "StreamAccountIdentifier": {
