@@ -897840,6 +897840,9 @@
       "AiSearchCreateInstanceRequestSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchCreateInstanceRequestSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "minItems": 1,
@@ -898296,6 +898299,9 @@
       "AiSearchUpdateInstanceRequestSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchUpdateInstanceRequestSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "minItems": 1,
@@ -898844,6 +898850,9 @@
       "AiSearchNamespaceCreateInstanceRequestSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchNamespaceCreateInstanceRequestSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "minItems": 1,
@@ -899300,6 +899309,9 @@
       "AiSearchNamespaceUpdateInstanceRequestSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchNamespaceUpdateInstanceRequestSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "minItems": 1,
@@ -917940,6 +917952,9 @@
       "AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "type": "array",
@@ -918049,6 +918064,9 @@
       "AiSearchCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "minItems": 1,
@@ -918142,6 +918160,9 @@
       "AiSearchDeleteInstance200ResponseResultSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchDeleteInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "minItems": 1,
@@ -918235,6 +918256,9 @@
       "AiSearchFetchInstance200ResponseResultSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchFetchInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "minItems": 1,
@@ -918363,6 +918387,9 @@
       "AiSearchUpdateInstance200ResponseResultSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchUpdateInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "minItems": 1,
@@ -918444,6 +918471,9 @@
       "AiSearchNamespaceListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchNamespaceListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "type": "array",
@@ -918553,6 +918583,9 @@
       "AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "minItems": 1,
@@ -918646,6 +918679,9 @@
       "AiSearchNamespaceDeleteInstance200ResponseResultSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchNamespaceDeleteInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "minItems": 1,
@@ -918739,6 +918775,9 @@
       "AiSearchNamespaceFetchInstance200ResponseResultSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchNamespaceFetchInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "minItems": 1,
@@ -918867,6 +918906,9 @@
       "AiSearchNamespaceUpdateInstance200ResponseResultSourceParamsWebCrawlerParseOptions": {
         "type": "object",
         "properties": {
+          "browser_rendering_wait_until": {
+            "$ref": "#/components/schemas/AiSearchNamespaceUpdateInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil"
+          },
           "content_selector": {
             "maxItems": 10,
             "minItems": 1,
@@ -1026771,6 +1026813,39 @@
           ]
         }
       },
+      "AiSearchCreateInstanceRequestSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "description": "Page load event Browser Rendering waits for before capturing content. Defaults to \u0060networkidle2\u0060 when omitted. Use \u0060load\u0060 or \u0060domcontentloaded\u0060 for pages that keep network connections open and never reach network idle. Ignored when \u0060use_browser_rendering\u0060 is false.",
+        "example": "load",
+        "x-ms-enum": {
+          "name": "AiSearchCreateInstanceRequestSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
+            }
+          ]
+        }
+      },
       "AiSearchCreateInstance201ResponseResultMetadataCreatedFromEmdashPluginType": {
         "enum": [
           "native",
@@ -1027189,6 +1027264,39 @@
           ]
         }
       },
+      "AiSearchUpdateInstanceRequestSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "description": "Page load event Browser Rendering waits for before capturing content. Defaults to \u0060networkidle2\u0060 when omitted. Use \u0060load\u0060 or \u0060domcontentloaded\u0060 for pages that keep network connections open and never reach network idle. Ignored when \u0060use_browser_rendering\u0060 is false.",
+        "example": "load",
+        "x-ms-enum": {
+          "name": "AiSearchUpdateInstanceRequestSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
+            }
+          ]
+        }
+      },
       "AiSearchUpdateInstance200ResponseResultMetadataCreatedFromEmdashPluginType": {
         "enum": [
           "native",
@@ -1027595,6 +1027703,39 @@
             {
               "value": "links",
               "name": "Links"
+            }
+          ]
+        }
+      },
+      "AiSearchNamespaceCreateInstanceRequestSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "description": "Page load event Browser Rendering waits for before capturing content. Defaults to \u0060networkidle2\u0060 when omitted. Use \u0060load\u0060 or \u0060domcontentloaded\u0060 for pages that keep network connections open and never reach network idle. Ignored when \u0060use_browser_rendering\u0060 is false.",
+        "example": "load",
+        "x-ms-enum": {
+          "name": "AiSearchNamespaceCreateInstanceRequestSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
             }
           ]
         }
@@ -1028013,6 +1028154,39 @@
             {
               "value": "links",
               "name": "Links"
+            }
+          ]
+        }
+      },
+      "AiSearchNamespaceUpdateInstanceRequestSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "description": "Page load event Browser Rendering waits for before capturing content. Defaults to \u0060networkidle2\u0060 when omitted. Use \u0060load\u0060 or \u0060domcontentloaded\u0060 for pages that keep network connections open and never reach network idle. Ignored when \u0060use_browser_rendering\u0060 is false.",
+        "example": "load",
+        "x-ms-enum": {
+          "name": "AiSearchNamespaceUpdateInstanceRequestSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
             }
           ]
         }
@@ -1029066,6 +1029240,37 @@
           ]
         }
       },
+      "AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
+            }
+          ]
+        }
+      },
       "AiSearchCreateInstance201ResponseResultSourceParamsWebCrawlerDiscoverOptionsSource": {
         "enum": [
           "all",
@@ -1029090,6 +1029295,39 @@
             {
               "value": "links",
               "name": "Links"
+            }
+          ]
+        }
+      },
+      "AiSearchCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "description": "Page load event Browser Rendering waits for before capturing content. Defaults to \u0060networkidle2\u0060 when omitted. Use \u0060load\u0060 or \u0060domcontentloaded\u0060 for pages that keep network connections open and never reach network idle. Ignored when \u0060use_browser_rendering\u0060 is false.",
+        "example": "load",
+        "x-ms-enum": {
+          "name": "AiSearchCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
             }
           ]
         }
@@ -1029122,6 +1029360,39 @@
           ]
         }
       },
+      "AiSearchDeleteInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "description": "Page load event Browser Rendering waits for before capturing content. Defaults to \u0060networkidle2\u0060 when omitted. Use \u0060load\u0060 or \u0060domcontentloaded\u0060 for pages that keep network connections open and never reach network idle. Ignored when \u0060use_browser_rendering\u0060 is false.",
+        "example": "load",
+        "x-ms-enum": {
+          "name": "AiSearchDeleteInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
+            }
+          ]
+        }
+      },
       "AiSearchFetchInstance200ResponseResultSourceParamsWebCrawlerDiscoverOptionsSource": {
         "enum": [
           "all",
@@ -1029146,6 +1029417,39 @@
             {
               "value": "links",
               "name": "Links"
+            }
+          ]
+        }
+      },
+      "AiSearchFetchInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "description": "Page load event Browser Rendering waits for before capturing content. Defaults to \u0060networkidle2\u0060 when omitted. Use \u0060load\u0060 or \u0060domcontentloaded\u0060 for pages that keep network connections open and never reach network idle. Ignored when \u0060use_browser_rendering\u0060 is false.",
+        "example": "load",
+        "x-ms-enum": {
+          "name": "AiSearchFetchInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
             }
           ]
         }
@@ -1029178,6 +1029482,39 @@
           ]
         }
       },
+      "AiSearchUpdateInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "description": "Page load event Browser Rendering waits for before capturing content. Defaults to \u0060networkidle2\u0060 when omitted. Use \u0060load\u0060 or \u0060domcontentloaded\u0060 for pages that keep network connections open and never reach network idle. Ignored when \u0060use_browser_rendering\u0060 is false.",
+        "example": "load",
+        "x-ms-enum": {
+          "name": "AiSearchUpdateInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
+            }
+          ]
+        }
+      },
       "AiSearchNamespaceListInstances200ResponseResultItemSourceParamsWebCrawlerDiscoverOptionsSource": {
         "enum": [
           "all",
@@ -1029200,6 +1029537,37 @@
             {
               "value": "links",
               "name": "Links"
+            }
+          ]
+        }
+      },
+      "AiSearchNamespaceListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AiSearchNamespaceListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
             }
           ]
         }
@@ -1029232,6 +1029600,39 @@
           ]
         }
       },
+      "AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "description": "Page load event Browser Rendering waits for before capturing content. Defaults to \u0060networkidle2\u0060 when omitted. Use \u0060load\u0060 or \u0060domcontentloaded\u0060 for pages that keep network connections open and never reach network idle. Ignored when \u0060use_browser_rendering\u0060 is false.",
+        "example": "load",
+        "x-ms-enum": {
+          "name": "AiSearchNamespaceCreateInstance201ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
+            }
+          ]
+        }
+      },
       "AiSearchNamespaceDeleteInstance200ResponseResultSourceParamsWebCrawlerDiscoverOptionsSource": {
         "enum": [
           "all",
@@ -1029256,6 +1029657,39 @@
             {
               "value": "links",
               "name": "Links"
+            }
+          ]
+        }
+      },
+      "AiSearchNamespaceDeleteInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "description": "Page load event Browser Rendering waits for before capturing content. Defaults to \u0060networkidle2\u0060 when omitted. Use \u0060load\u0060 or \u0060domcontentloaded\u0060 for pages that keep network connections open and never reach network idle. Ignored when \u0060use_browser_rendering\u0060 is false.",
+        "example": "load",
+        "x-ms-enum": {
+          "name": "AiSearchNamespaceDeleteInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
             }
           ]
         }
@@ -1029288,6 +1029722,39 @@
           ]
         }
       },
+      "AiSearchNamespaceFetchInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "description": "Page load event Browser Rendering waits for before capturing content. Defaults to \u0060networkidle2\u0060 when omitted. Use \u0060load\u0060 or \u0060domcontentloaded\u0060 for pages that keep network connections open and never reach network idle. Ignored when \u0060use_browser_rendering\u0060 is false.",
+        "example": "load",
+        "x-ms-enum": {
+          "name": "AiSearchNamespaceFetchInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
+            }
+          ]
+        }
+      },
       "AiSearchNamespaceUpdateInstance200ResponseResultSourceParamsWebCrawlerDiscoverOptionsSource": {
         "enum": [
           "all",
@@ -1029312,6 +1029779,39 @@
             {
               "value": "links",
               "name": "Links"
+            }
+          ]
+        }
+      },
+      "AiSearchNamespaceUpdateInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil": {
+        "enum": [
+          "load",
+          "domcontentloaded",
+          "networkidle0",
+          "networkidle2"
+        ],
+        "type": "string",
+        "description": "Page load event Browser Rendering waits for before capturing content. Defaults to \u0060networkidle2\u0060 when omitted. Use \u0060load\u0060 or \u0060domcontentloaded\u0060 for pages that keep network connections open and never reach network idle. Ignored when \u0060use_browser_rendering\u0060 is false.",
+        "example": "load",
+        "x-ms-enum": {
+          "name": "AiSearchNamespaceUpdateInstance200ResponseResultSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "load",
+              "name": "Load"
+            },
+            {
+              "value": "domcontentloaded",
+              "name": "Domcontentloaded"
+            },
+            {
+              "value": "networkidle0",
+              "name": "Networkidle0"
+            },
+            {
+              "value": "networkidle2",
+              "name": "Networkidle2"
             }
           ]
         }

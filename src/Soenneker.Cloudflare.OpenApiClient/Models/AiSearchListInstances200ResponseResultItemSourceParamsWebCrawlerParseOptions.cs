@@ -17,6 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("browser_rendering_wait_until") is null) { _explicitNullValueBrowserRenderingWaitUntil = default!; _explicitNullProperties?.Remove("browser_rendering_wait_until"); }
+            else if (parseNode.GetChildNode("browser_rendering_wait_until") is { } nullNodeBrowserRenderingWaitUntil && nullNodeBrowserRenderingWaitUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrowserRenderingWaitUntil = null;
             if (parseNode.GetChildNode("content_selector") is null) { _explicitNullValueContentSelector = default!; _explicitNullProperties?.Remove("content_selector"); }
             else if (parseNode.GetChildNode("content_selector") is { } nullNodeContentSelector && nullNodeContentSelector.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContentSelector = null;
             if (parseNode.GetChildNode("include_headers") is null) { _explicitNullValueIncludeHeaders = default!; _explicitNullProperties?.Remove("include_headers"); }
@@ -31,6 +33,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The browser_rendering_wait_until property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil? BrowserRenderingWaitUntil { get => _explicitNullValueBrowserRenderingWaitUntil; set { _explicitNullValueBrowserRenderingWaitUntil = value; AdditionalData?.Remove("browser_rendering_wait_until"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser_rendering_wait_until"); else _explicitNullProperties?.Remove("browser_rendering_wait_until"); } }
+        private global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil? _explicitNullValueBrowserRenderingWaitUntil = default!;
         /// <summary>The content_selector property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,8 +95,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
+                { "browser_rendering_wait_until", n => { var parsed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBrowserRenderingWaitUntil = default; _explicitNullProperties?.Remove("browser_rendering_wait_until"); AdditionalData["browser_rendering_wait_until"] = unknown; } else { BrowserRenderingWaitUntil = parsed; AdditionalData.Remove("browser_rendering_wait_until"); } } },
                 { "content_selector", n => { ContentSelector = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsContentSelectorItem>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsContentSelectorItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "include_headers", n => { IncludeHeaders = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsIncludeHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsIncludeHeaders.CreateFromDiscriminatorValue); } },
                 { "include_images", n => { IncludeImages = n.GetBoolValue(); } },
@@ -106,6 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsBrowserRenderingWaitUntil>("browser_rendering_wait_until", BrowserRenderingWaitUntil);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsContentSelectorItem>("content_selector", ContentSelector);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AiSearchListInstances200ResponseResultItemSourceParamsWebCrawlerParseOptionsIncludeHeaders>("include_headers", IncludeHeaders);
             writer.WriteBoolValue("include_images", IncludeImages);
